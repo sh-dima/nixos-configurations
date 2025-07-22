@@ -110,6 +110,10 @@
     librewolf
   ];
 
+  home-manager.users.enderman = {
+    home.stateVersion = "24.11";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
