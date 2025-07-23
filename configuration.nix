@@ -110,6 +110,8 @@
     librewolf
   ];
 
+  services.flatpak.enable = true;
+
   home-manager.users.enderman = {
     home.stateVersion = "24.11";
   };
