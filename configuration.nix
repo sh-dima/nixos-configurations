@@ -108,6 +108,8 @@
     git
 
     librewolf
+
+    inkscape
   ];
 
   services.flatpak.enable = true;
