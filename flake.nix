@@ -2,10 +2,10 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    home-manager.url = "github:nix-community/home-manager?ref=release-24.11";
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = { self, nixpkgs, home-manager, nix-flatpak }: {
