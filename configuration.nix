@@ -110,6 +110,8 @@
     librewolf
 
     inkscape
+
+    gpt4all
   ];
 
   services.flatpak.enable = true;
