@@ -4,10 +4,16 @@
 
 { config, pkgs, ... }:
 
+let
+  username = "enderman";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      (import ./modules/generic/git.nix { inherit username; })
+      (import ./modules/personal/git.nix { inherit username; })
     ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -120,6 +126,8 @@
 
   home-manager.users.enderman = {
     home.stateVersion = "24.11";
+
+    programs.git.enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
