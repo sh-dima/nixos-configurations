@@ -107,6 +107,8 @@
   #  wget,
     git
 
+    vscodium
+
     librewolf
 
     inkscape
