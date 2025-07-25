@@ -113,6 +113,8 @@ in
   #  wget,
     git
 
+    gnupg
+
     vscodium
 
     librewolf
