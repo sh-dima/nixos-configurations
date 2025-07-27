@@ -12,7 +12,7 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/laptop/configuration.nix
         home-manager.nixosModules.default
 
         nix-flatpak.nixosModules.nix-flatpak

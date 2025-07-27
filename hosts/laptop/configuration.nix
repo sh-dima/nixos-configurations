@@ -12,8 +12,8 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      (import ./modules/generic/git.nix { inherit username; })
-      (import ./modules/personal/git.nix { inherit username; })
+      (import ../../modules/generic/git.nix { inherit username; })
+      (import ../../modules/personal/git.nix { inherit username; })
     ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
