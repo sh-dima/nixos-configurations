@@ -117,6 +117,8 @@ in
 
     vscodium
 
+    nixd
+
     librewolf
 
     inkscape
