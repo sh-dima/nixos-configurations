@@ -6,6 +6,8 @@
     home-manager.url = "github:nix-community/home-manager?ref=release-24.11";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
   };
 
   outputs = { nixpkgs, home-manager, nix-flatpak, ... }@inputs: {

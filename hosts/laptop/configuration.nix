@@ -129,6 +129,9 @@
 
       vscode = (import ../../modules/generic/vscode.nix { inherit pkgs; })
         // { enable = true; };
+
+      librewolf = (import ../../modules/generic/librewolf.nix {inherit pkgs inputs; })
+        // { enable = true; };
     };
   };
 
