@@ -118,7 +118,7 @@
 
   services.flatpak.enable = true;
 
-  home-manager.backupFileExtension = null;
+  home-manager.backupFileExtension = "bak";
   home-manager.users.enderman = {
     home.stateVersion = "24.11";
 
