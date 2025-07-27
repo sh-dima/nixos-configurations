@@ -1,15 +1,11 @@
-{ username, ... }:
-
 {
-  home-manager.users.${username}.programs.git = {
-    extraConfig = {
-      push = {
-        autoSetupRemote = true;
-      };
+  extraConfig = {
+    push = {
+      autoSetupRemote = true;
+    };
 
-      clean = {
-        requireForce = false;
-      };
+    clean = {
+      requireForce = false;
     };
   };
 }
