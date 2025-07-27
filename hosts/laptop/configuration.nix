@@ -121,9 +121,11 @@
   home-manager.users.enderman = {
     home.stateVersion = "24.11";
 
-    programs.git = (import ../../modules/generic/git.nix)
-      // (import ../../modules/personal/git.nix)
-      // { enable = true; };
+    programs = {
+      git = (import ../../modules/generic/git.nix)
+        // (import ../../modules/personal/git.nix)
+        // { enable = true; };
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
