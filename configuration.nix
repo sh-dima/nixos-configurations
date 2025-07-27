@@ -100,10 +100,6 @@ in
     isNormalUser = true;
     description = "User";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
   # List packages installed in system profile. To search, run:
