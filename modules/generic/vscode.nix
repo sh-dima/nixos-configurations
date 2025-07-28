@@ -10,6 +10,8 @@
   ];
 
   userSettings = {
+    "redhat.telemetry.enabled" = false;
+
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
