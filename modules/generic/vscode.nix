@@ -6,7 +6,7 @@
   extensions = with pkgs.vscode-extensions; [
     jnoortheen.nix-ide
     esbenp.prettier-vscode
-    redhat.vscode-xml
+    dotjoshjohnson.xml
   ];
 
   userSettings = {
