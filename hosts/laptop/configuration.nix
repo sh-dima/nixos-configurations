@@ -23,6 +23,7 @@
   ];
 
   nix.gc.automatic = true;
+  nix.settings.auto-optimise-store = true;
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
