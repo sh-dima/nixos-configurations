@@ -11,5 +11,9 @@
   userSettings = {
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
+
+    "workbench.editorAssociations" = {
+      "*.svg" = "default";
+    };
   };
 }
