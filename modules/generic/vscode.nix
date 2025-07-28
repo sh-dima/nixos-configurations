@@ -12,6 +12,8 @@
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
+    "prettier.useTabs" = true;
+
     "workbench.editorAssociations" = {
       "*.svg" = "default";
     };
