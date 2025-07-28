@@ -15,6 +15,8 @@
 
     "prettier.useTabs" = true;
 
+    "xmlTools.splitAttributesOnFormat" = true;
+
     "workbench.editorAssociations" = {
       "*.svg" = "default";
     };
