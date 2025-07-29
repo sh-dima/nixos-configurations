@@ -16,6 +16,9 @@
     "nix.serverPath" = "nixd";
 
     "prettier.useTabs" = true;
+    "prettier.printWidth" = 100000;
+    "prettier.singleAttributePerLine" = true;
+    "prettier.htmlWhitespaceSensitivity" = "strict";
 
     "xmlTools.splitAttributesOnFormat" = true;
 
