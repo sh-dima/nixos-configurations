@@ -7,10 +7,11 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
+    nix4vscode.url = "github:nix-community/nix4vscode";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -20,7 +21,7 @@
         nix-flatpak.nixosModules.nix-flatpak
       ];
 
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs self; };
     };
   };
 }
