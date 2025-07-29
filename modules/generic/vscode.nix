@@ -13,6 +13,8 @@
   ];
 
   userSettings = {
+    "editor.renderWhitespace" = "boundary";
+
     "redhat.telemetry.enabled" = false;
 
     "nix.enableLanguageServer" = true;
