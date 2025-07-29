@@ -14,6 +14,8 @@
   userSettings = {
     "editor.renderWhitespace" = "boundary";
 
+    "extensions.autoUpdate" = false;
+
     "redhat.telemetry.enabled" = false;
 
     "nix.enableLanguageServer" = true;
