@@ -26,6 +26,7 @@
     "prettier.htmlWhitespaceSensitivity" = "strict";
 
     "xmlTools.splitAttributesOnFormat" = true;
+    "prettyxml.settings.positionFirstAttributeOnSameLine" = false;
 
     "workbench.editorAssociations" = {
       "*.svg" = "default";
