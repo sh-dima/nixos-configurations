@@ -9,7 +9,6 @@
   extensions = pkgs.nix4vscode.forVscode [
     "jnoortheen.nix-ide.0.4.22"
     "esbenp.prettier-vscode.11.0.0"
-    "redhat.vscode-xml.0.29.0"
   ];
 
   userSettings = {
