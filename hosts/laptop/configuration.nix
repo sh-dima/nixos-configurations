@@ -5,6 +5,10 @@
 { self, inputs, config, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    self.inputs.nix4vscode.overlays.forVscode
+  ];
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
