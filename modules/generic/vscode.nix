@@ -3,6 +3,9 @@
 {
   package = pkgs.vscodium;
 
+  enableUpdateCheck = false;
+  enableExtensionUpdateCheck = false;
+
   extensions = with pkgs.vscode-extensions; [
     jnoortheen.nix-ide
     esbenp.prettier-vscode
