@@ -5,11 +5,6 @@
 { inputs, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
@@ -122,21 +117,7 @@
   services.flatpak.enable = true;
 
   home-manager.backupFileExtension = "bak";
-  home-manager.users.enderman = {
-    home.stateVersion = "24.11";
-
-    programs = {
-      git = (import ../../modules/generic/git.nix)
-        // (import ../../modules/personal/git.nix)
-        // { enable = true; };
-
-      vscode = (import ../../modules/generic/vscode.nix { inherit pkgs; })
-        // { enable = true; };
-
-      librewolf = (import ../../modules/generic/librewolf.nix {inherit pkgs inputs; })
-        // { enable = true; };
-    };
-  };
+  home-manager.users.enderman = (import ./users/enderman.nix { inherit inputs pkgs; });
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
