@@ -116,6 +116,10 @@
 
   services.flatpak.enable = true;
 
+  home-manager.sharedModules = [
+    inputs.plasma-manager.homeManagerModules.plasma-manager
+  ];
+
   home-manager.backupFileExtension = "bak";
   home-manager.users.enderman = (import ./users/enderman.nix { inherit inputs pkgs; });
 
