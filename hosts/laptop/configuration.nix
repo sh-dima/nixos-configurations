@@ -107,8 +107,6 @@
 
     nixd
 
-    librewolf
-
     inkscape
 
     gpt4all
