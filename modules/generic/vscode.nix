@@ -33,6 +33,10 @@
     "xmlTools.splitAttributesOnFormat" = true;
     "prettyxml.settings.positionFirstAttributeOnSameLine" = false;
 
+    "files.associations" = {
+      "flake.lock" = "json";
+    };
+
     "workbench.editorAssociations" = {
       "*.svg" = "default";
     };
