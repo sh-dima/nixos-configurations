@@ -13,5 +13,8 @@
 
     librewolf = (import ../../../modules/generic/librewolf.nix {inherit pkgs inputs; })
       // { enable = true; };
+
+    plasma = (import ../../../modules/generic/plasma.nix)
+      // { enable = true; };
   };
 }
