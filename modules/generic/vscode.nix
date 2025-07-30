@@ -12,6 +12,8 @@
   ];
 
   userSettings = {
+    "workbench.startupEditor" = "none";
+
     "editor.renderWhitespace" = "boundary";
 
     "extensions.autoUpdate" = false;
