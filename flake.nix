@@ -16,6 +16,7 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/laptop/configuration.nix
+        ./hosts/laptop/hardware-configuration.nix
         home-manager.nixosModules.default
 
         nix-flatpak.nixosModules.nix-flatpak
