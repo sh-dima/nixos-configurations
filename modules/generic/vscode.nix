@@ -24,6 +24,8 @@
 
     "redhat.telemetry.enabled" = false;
 
+    "gitlens.plusFeatures.enabled" = false;
+
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
