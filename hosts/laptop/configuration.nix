@@ -107,6 +107,8 @@
 
     nixd
 
+    brave
+
     inkscape
 
     gpt4all
