@@ -16,6 +16,8 @@
 
     "editor.renderWhitespace" = "boundary";
 
+    "git.confirmSync" = false;
+
     "extensions.autoUpdate" = false;
 
     "redhat.telemetry.enabled" = false;
