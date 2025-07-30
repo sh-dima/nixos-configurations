@@ -40,5 +40,9 @@
     "workbench.editorAssociations" = {
       "*.svg" = "default";
     };
+
+    "[json]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    };
   };
 }
