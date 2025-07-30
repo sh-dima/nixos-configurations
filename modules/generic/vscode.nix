@@ -7,6 +7,8 @@
   enableExtensionUpdateCheck = false;
 
   extensions = pkgs.nix4vscode.forVscode [
+    "eamodio.gitlens.17.3.3"
+
     "jnoortheen.nix-ide.0.4.22"
     "esbenp.prettier-vscode.11.0.0"
   ];
