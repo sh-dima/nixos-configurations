@@ -11,7 +11,7 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, ... }@inputs: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -19,6 +19,12 @@
         home-manager.nixosModules.default
 
         nix-flatpak.nixosModules.nix-flatpak
+
+        {
+          nixpkgs.overlays = [
+            nix4vscode.overlays.forVscode
+          ];
+        }
       ];
 
       specialArgs = { inherit inputs self; };
