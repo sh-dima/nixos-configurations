@@ -27,6 +27,8 @@
     "gitlens.plusFeatures.enabled" = false;
     "gitlens.telemetry.enabled" = false;
 
+    "gitlens.launchpad.indicator.enabled" = false;
+
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
