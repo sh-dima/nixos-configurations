@@ -107,6 +107,8 @@
 
     vscodium
 
+    jdk
+
     nixd
 
     librewolf
