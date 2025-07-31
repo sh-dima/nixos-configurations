@@ -20,6 +20,22 @@
         "type": "gitlab"
       }
     },
+    "flatpaks": {
+      "locked": {
+        "lastModified": 1753962853,
+        "narHash": "sha256-e/45Vj8FnlZWngbFThinQ5vNPAeEvtF6YTqDhsUtJhA=",
+        "owner": "in-a-dil-emma",
+        "repo": "declarative-flatpak",
+        "rev": "51d40719037c9ae15a51c58ca01d49c0cfb58c52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "in-a-dil-emma",
+        "ref": "stable-v3",
+        "repo": "declarative-flatpak",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -57,22 +73,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "nix-flatpak": {
-      "locked": {
-        "lastModified": 1739444422,
-        "narHash": "sha256-iAVVHi7X3kWORftY+LVbRiStRnQEob2TULWyjMS6dWg=",
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "rev": "5e54c3ca05a7c7d968ae1ddeabe01d2a9bc1e177",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gmodena",
-        "ref": "latest",
-        "repo": "nix-flatpak",
         "type": "github"
       }
     },
@@ -197,8 +197,8 @@
     "root": {
       "inputs": {
         "firefox-addons": "firefox-addons",
+        "flatpaks": "flatpaks",
         "home-manager": "home-manager",
-        "nix-flatpak": "nix-flatpak",
         "nix4vscode": "nix4vscode",
         "nixpkgs": "nixpkgs_4",
         "plasma-manager": "plasma-manager"

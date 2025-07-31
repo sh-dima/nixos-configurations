@@ -6,13 +6,13 @@
     home-manager.url = "github:nix-community/home-manager?ref=release-24.11";
     plasma-manager.url = "github:nix-community/plasma-manager";
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/stable-v3";
 
     nix4vscode.url = "github:nix-community/nix4vscode";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, flatpaks, nix4vscode, ... }@inputs: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -20,7 +20,7 @@
         ./hosts/laptop/hardware-configuration.nix
         home-manager.nixosModules.default
 
-        nix-flatpak.nixosModules.nix-flatpak
+        flatpaks.nixosModule
 
         {
           nixpkgs.overlays = [
