@@ -7,5 +7,9 @@
     clean = {
       requireForce = false;
     };
+
+    advice = {
+      forceDeleteBranch = false;
+    };
   };
 }
