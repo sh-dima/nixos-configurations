@@ -117,6 +117,9 @@
   ];
 
   services.flatpak.enable = true;
+  services.flatpak.packages = [
+    "org.vinegarhq.Sober"
+  ];
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
