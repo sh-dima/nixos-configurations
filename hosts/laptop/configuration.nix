@@ -103,6 +103,8 @@
 
     gnupg
 
+    jadx
+
     vscodium
 
     nixd
