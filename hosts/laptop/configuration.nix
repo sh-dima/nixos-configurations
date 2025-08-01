@@ -107,8 +107,6 @@
 
     vscodium
 
-    jdk
-
     nixd
 
     librewolf
@@ -117,6 +115,9 @@
 
     gpt4all
   ];
+
+  programs.java.enable = true;
+  programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
 
