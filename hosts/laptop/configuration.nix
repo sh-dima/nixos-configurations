@@ -109,6 +109,8 @@
 
     nixd
 
+    gradle
+
     librewolf
 
     inkscape
