@@ -7,6 +7,7 @@
   enableExtensionUpdateCheck = false;
 
   extensions = pkgs.nix4vscode.forVscode [
+    "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
     "esbenp.prettier-vscode.11.0.0"
   ];
@@ -21,6 +22,26 @@
     "extensions.autoUpdate" = false;
 
     "redhat.telemetry.enabled" = false;
+
+    "java.jdt.ls.java.home" = pkgs.jdk;
+
+    "java.project.referencedLibraries" = {
+      include = [
+        "${pkgs.jdk}/**/*.jar"
+      ];
+
+      sources = {
+        "${builtins.unsafeDiscardStringContext pkgs.jdk}/lib/openjdk/lib/jrt-fs.jar" = "${pkgs.jdk}/lib/openjdk/lib/src.zip";
+      };
+    };
+
+    "java.compile.nullAnalysis.mode" = "automatic";
+    "java.configuration.updateBuildConfiguration" = "automatic";
+
+    "java.symbols.includeSourceMethodDeclarations" = true;
+
+    "java.eclipse.downloadSources" = true;
+    "java.maven.downloadSources" = true;
 
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";

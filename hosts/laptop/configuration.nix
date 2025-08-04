@@ -94,6 +94,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -109,12 +111,19 @@
 
     nixd
 
+    gradle
+
     librewolf
 
     inkscape
 
     gpt4all
+
+    obs-studio
   ];
+
+  programs.java.enable = true;
+  programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
   services.flatpak.packages = [
