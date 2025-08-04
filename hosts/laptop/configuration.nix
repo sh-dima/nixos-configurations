@@ -118,6 +118,8 @@
     inkscape
 
     gpt4all
+
+    obs-studio
   ];
 
   programs.java.enable = true;
