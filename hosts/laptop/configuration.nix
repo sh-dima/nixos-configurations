@@ -122,6 +122,8 @@
     obs-studio
   ];
 
+  programs.kdeconnect.enable = true;
+
   programs.java.enable = true;
   programs.java.package = pkgs.jdk;
 
