@@ -119,7 +119,7 @@
 
     inkscape
 
-    gpt4all
+    jan
 
     obs-studio
   ];
