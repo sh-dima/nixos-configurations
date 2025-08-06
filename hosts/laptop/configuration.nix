@@ -133,7 +133,7 @@
   services.flatpak.enable = true;
 
   environment.sessionVariables =  {
-    ANDROID_SDK_ROOT = pkgs.androidsdk;
+    ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
   };
 
   home-manager.sharedModules = [
