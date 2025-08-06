@@ -7,6 +7,8 @@
   profiles.default.enableExtensionUpdateCheck = false;
 
   profiles.default.extensions = pkgs.nix4vscode.forVscode [
+    "mhutchie.git-graph.1.30.0"
+
     "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
     "esbenp.prettier-vscode.11.0.0"
