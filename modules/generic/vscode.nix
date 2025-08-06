@@ -3,16 +3,16 @@
 {
   package = pkgs.vscodium;
 
-  enableUpdateCheck = false;
-  enableExtensionUpdateCheck = false;
+  profiles.default.enableUpdateCheck = false;
+  profiles.default.enableExtensionUpdateCheck = false;
 
-  extensions = pkgs.nix4vscode.forVscode [
+  profiles.default.extensions = pkgs.nix4vscode.forVscode [
     "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
     "esbenp.prettier-vscode.11.0.0"
   ];
 
-  userSettings = {
+  profiles.default.userSettings = {
     "workbench.startupEditor" = "none";
 
     "editor.renderWhitespace" = "boundary";
