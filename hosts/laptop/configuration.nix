@@ -69,7 +69,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -94,6 +94,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.android_sdk.accept_license = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -103,18 +107,34 @@
 
     gnupg
 
+    androidsdk
+    jadx
+
     vscodium
 
     nixd
+
+    gradle
 
     librewolf
 
     inkscape
 
-    gpt4all
+    jan
+
+    obs-studio
   ];
 
+  programs.kdeconnect.enable = true;
+
+  programs.java.enable = true;
+  programs.java.package = pkgs.jdk;
+
   services.flatpak.enable = true;
+
+  environment.sessionVariables =  {
+    ANDROID_SDK_ROOT = pkgs.androidsdk;
+  };
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager

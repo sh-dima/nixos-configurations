@@ -3,17 +3,18 @@
 {
   package = pkgs.vscodium;
 
-  enableUpdateCheck = false;
-  enableExtensionUpdateCheck = false;
+  profiles.default.enableUpdateCheck = false;
+  profiles.default.enableExtensionUpdateCheck = false;
 
-  extensions = pkgs.nix4vscode.forVscode [
+  profiles.default.extensions = pkgs.nix4vscode.forVscode [
     "eamodio.gitlens.17.3.3"
 
+    "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
     "esbenp.prettier-vscode.11.0.0"
   ];
 
-  userSettings = {
+  profiles.default.userSettings = {
     "workbench.startupEditor" = "none";
 
     "editor.renderWhitespace" = "boundary";
@@ -28,6 +29,26 @@
     "gitlens.telemetry.enabled" = false;
 
     "gitlens.launchpad.indicator.enabled" = false;
+
+    "java.jdt.ls.java.home" = pkgs.jdk;
+
+    "java.project.referencedLibraries" = {
+      include = [
+        "${pkgs.jdk}/**/*.jar"
+      ];
+
+      sources = {
+        "${builtins.unsafeDiscardStringContext pkgs.jdk}/lib/openjdk/lib/jrt-fs.jar" = "${pkgs.jdk}/lib/openjdk/lib/src.zip";
+      };
+    };
+
+    "java.compile.nullAnalysis.mode" = "automatic";
+    "java.configuration.updateBuildConfiguration" = "automatic";
+
+    "java.symbols.includeSourceMethodDeclarations" = true;
+
+    "java.eclipse.downloadSources" = true;
+    "java.maven.downloadSources" = true;
 
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
