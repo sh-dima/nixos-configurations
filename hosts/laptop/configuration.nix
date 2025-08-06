@@ -107,6 +107,7 @@
 
     gnupg
 
+    androidsdk
     jadx
 
     vscodium
@@ -130,6 +131,10 @@
   programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
+
+  environment.sessionVariables =  {
+    ANDROID_SDK_ROOT = pkgs.androidsdk;
+  };
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
