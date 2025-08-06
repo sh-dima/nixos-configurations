@@ -112,6 +112,7 @@
 
     vscodium
 
+    deno
     nixd
 
     gradle
