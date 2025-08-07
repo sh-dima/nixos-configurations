@@ -20,6 +20,8 @@
       authors = "! git log --format='%aN <%aE>' | sort -u";
       committers = "! git log --format='%cN <%cE>' | sort -u";
       contributors = "! git log --format='%aN <%aE>%n%cN <%cE>' | sort -u";
+
+      ls = "ls-files";
     };
   };
 }
