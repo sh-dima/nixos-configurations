@@ -115,6 +115,7 @@
 
     deno
     nixd
+    steam-run-free
 
     gradle
 
