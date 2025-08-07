@@ -106,6 +106,7 @@
     git
     bitwarden-desktop
 
+    sqlitebrowser
     gnupg
 
     androidsdk
