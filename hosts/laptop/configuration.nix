@@ -18,6 +18,7 @@
   ];
 
   nix.gc.automatic = true;
+  nix.gc.dates = "daily";
   nix.settings.auto-optimise-store = true;
 
   networking.hostName = "laptop"; # Define your hostname.
