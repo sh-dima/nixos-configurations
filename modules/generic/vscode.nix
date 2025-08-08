@@ -11,6 +11,7 @@
 
     "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
+    "supakornras.asymptote.2.1.0"
     "denoland.vscode-deno.3.45.1"
     "esbenp.prettier-vscode.11.0.0"
   ];
