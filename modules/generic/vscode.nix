@@ -50,6 +50,8 @@
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
+    "editor.tabSize" = 2;
+
     "prettier.useTabs" = true;
     "prettier.printWidth" = 100000;
     "prettier.singleAttributePerLine" = true;
