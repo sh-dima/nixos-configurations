@@ -109,6 +109,10 @@
 
     sqlitebrowser
     gnupg
+    ghostscript
+    tetex
+    texlivePackages.dvisvgm
+    imagemagick
 
     androidsdk
     jadx
@@ -140,6 +144,7 @@
 
   environment.sessionVariables =  {
     ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
+    ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
   };
 
   home-manager.sharedModules = [
