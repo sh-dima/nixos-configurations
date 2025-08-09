@@ -147,6 +147,10 @@
     ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
   };
 
+  environment.interactiveShellInit = ''
+    alias try='nix-shell -p'
+  '';
+
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
