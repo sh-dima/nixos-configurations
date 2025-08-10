@@ -130,7 +130,9 @@
 
     inkscape
 
-    jan
+    ollama
+    open-webui
+    oterm
 
     obs-studio
   ];
@@ -141,6 +143,26 @@
   programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
+
+  services.ollama.enable = true;
+
+  systemd.services.ollama.serviceConfig = {
+    Environment = [
+      "OLLAMA_HOST=0.0.0.0:11434"
+    ];
+  };
+
+  services.open-webui = {
+    enable = true;
+    environment = {
+      ANONYMIZED_TELEMETRY = "False";
+      SCARF_NO_ANALYTICS = "True";
+      DO_NOT_TRACK = "True";
+
+      OLLAMA_API_BASE_URL = "http://127.0.0.1:11434/api";
+      OLLAMA_BASE_URL = "http://127.0.0.1:11434";
+    };
+  };
 
   environment.sessionVariables =  {
     ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
