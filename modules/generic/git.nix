@@ -27,6 +27,8 @@
 
       amend = "commit --amend";
       rewrite = "commit --amend --reset-author";
+
+      force = "push --force";
     };
   };
 }
