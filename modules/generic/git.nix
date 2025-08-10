@@ -25,6 +25,8 @@
 
       ls = "ls-files";
 
+      back = "checkout HEAD^1";
+
       change = "! git add . && git commit";
 
       amend = "commit --amend";
