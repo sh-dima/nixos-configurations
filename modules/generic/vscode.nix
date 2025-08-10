@@ -50,6 +50,7 @@
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
+    "editor.insertSpaces" = false;
     "editor.tabSize" = 2;
 
     "prettier.useTabs" = true;
