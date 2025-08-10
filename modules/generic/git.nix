@@ -31,6 +31,8 @@
       rewrite = "commit --amend --reset-author";
 
       force = "push --force";
+
+      wipe = "restore .";
     };
   };
 }
