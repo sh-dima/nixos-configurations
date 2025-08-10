@@ -24,6 +24,9 @@
       contributors = "! git log --format='%aN <%aE>%n%cN <%cE>' | sort -u";
 
       ls = "ls-files";
+
+      amend = "commit --amend";
+      rewrite = "commit --amend --reset-author";
     };
   };
 }
