@@ -25,6 +25,8 @@
 
       ls = "ls-files";
 
+      change = "! git add . && git commit";
+
       amend = "commit --amend";
       rewrite = "commit --amend --reset-author";
 
