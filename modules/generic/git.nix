@@ -26,6 +26,7 @@
       ls = "ls-files";
 
       back = "checkout HEAD^1";
+      forward = "! git checkout $(git rev-list --topo-order HEAD..main | tail -1)";
 
       change = "! git add . && git commit";
 
