@@ -18,6 +18,7 @@
   ];
 
   nix.gc.automatic = true;
+  nix.gc.dates = "daily";
   nix.settings.auto-optimise-store = true;
 
   networking.hostName = "laptop"; # Define your hostname.
@@ -69,7 +70,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -94,27 +95,87 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.android_sdk.accept_license = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget,
     git
+    bitwarden-desktop
 
+    sqlitebrowser
     gnupg
+    ghostscript
+    tetex
+    texlivePackages.dvisvgm
+    imagemagick
+
+    androidsdk
+    jadx
 
     vscodium
 
+    asymptote
+    deno
     nixd
+    steam-run-free
+
+    gradle
 
     brave
 
     inkscape
 
-    gpt4all
+    ollama
+    open-webui
+    oterm
+
+    obs-studio
   ];
 
+  programs.kdeconnect.enable = true;
+
+  programs.java.enable = true;
+  programs.java.package = pkgs.jdk;
+
   services.flatpak.enable = true;
+
+  services.ollama.enable = true;
+
+  systemd.services.ollama.serviceConfig = {
+    Environment = [
+      "OLLAMA_HOST=0.0.0.0:11434"
+    ];
+  };
+
+  services.open-webui = {
+    enable = true;
+    environment = {
+      ANONYMIZED_TELEMETRY = "False";
+      SCARF_NO_ANALYTICS = "True";
+      DO_NOT_TRACK = "True";
+
+      OLLAMA_API_BASE_URL = "http://127.0.0.1:11434/api";
+      OLLAMA_BASE_URL = "http://127.0.0.1:11434";
+    };
+  };
+
+  environment.sessionVariables =  {
+    ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
+    ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
+  };
+
+  environment.interactiveShellInit = ''
+    alias rebuild='sudo nixos-rebuild switch'
+
+    alias try='nix-shell -p'
+
+    alias size='du -hs'
+  '';
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager

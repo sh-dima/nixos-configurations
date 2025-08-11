@@ -14,4 +14,7 @@
     plasma = (import ../../../modules/generic/plasma.nix)
       // { enable = true; };
   };
+
+  xdg.mimeApps = (import ../../../modules/generic/xdg.nix)
+    // { enable = true; };
 }
