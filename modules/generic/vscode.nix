@@ -8,6 +8,7 @@
 
   profiles.default.extensions = pkgs.nix4vscode.forVscode [
     "mhutchie.git-graph.1.30.0"
+    "yandeu.five-server.0.3.9"
 
     "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
