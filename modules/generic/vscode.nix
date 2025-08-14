@@ -3,16 +3,21 @@
 {
   package = pkgs.vscodium;
 
-  enableUpdateCheck = false;
-  enableExtensionUpdateCheck = false;
+  profiles.default.enableUpdateCheck = false;
+  profiles.default.enableExtensionUpdateCheck = false;
 
-  extensions = pkgs.nix4vscode.forVscode [
+  profiles.default.extensions = pkgs.nix4vscode.forVscode [
+    "mhutchie.git-graph.1.30.0"
+    "yandeu.five-server.0.3.9"
+
     "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
+    "supakornras.asymptote.2.1.0"
+    "denoland.vscode-deno.3.45.1"
     "esbenp.prettier-vscode.11.0.0"
   ];
 
-  userSettings = {
+  profiles.default.userSettings = {
     "workbench.startupEditor" = "none";
 
     "editor.renderWhitespace" = "boundary";
@@ -46,6 +51,9 @@
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
+    "editor.insertSpaces" = false;
+    "editor.tabSize" = 2;
+
     "prettier.useTabs" = true;
     "prettier.printWidth" = 100000;
     "prettier.singleAttributePerLine" = true;
@@ -63,6 +71,10 @@
     };
 
     "[json]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    };
+
+    "[html]" = {
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
     };
   };

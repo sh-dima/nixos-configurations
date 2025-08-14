@@ -2,11 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,16 +19,7 @@
     "flakes"
   ];
 
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.settings.auto-optimise-store = true;
-
-  nix.settings.trusted-users = [
-    "root"
-    "enderman"
-  ];
-
-  networking.hostName = "laptop"; # Define your hostname.
+  networking.hostName = "pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -40,7 +33,7 @@
   time.timeZone = "Europe/Dublin";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.defaultLocale = "en_IE.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IE.UTF-8";
@@ -64,12 +57,9 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "gb";
+    layout = "us";
     variant = "";
   };
-
-  # Configure console keymap
-  console.keyMap = "uk";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -98,93 +88,31 @@
     isNormalUser = true;
     description = "User";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    #  thunderbird
+    ];
   };
 
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.config.android_sdk.accept_license = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget,
+  #  wget
     git
-    bitwarden-desktop
-
-    sqlitebrowser
-    gnupg
-    zip
-    ghostscript
-    tetex
-    texlivePackages.dvisvgm
-    imagemagick
-
-    androidsdk
-    jadx
-
     vscodium
-
-    asymptote
-    deno
     nixd
-    steam-run-free
-
-    gradle
+    zip
 
     librewolf
-
-    inkscape
-
-    ollama
-    open-webui
-    oterm
-
-    obs-studio
   ];
-
-  programs.kdeconnect.enable = true;
-
-  programs.java.enable = true;
-  programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
-  services.flatpak.packages = [
-    "org.vinegarhq.Sober"
-  ];
 
-  services.ollama.enable = true;
-
-  systemd.services.ollama.serviceConfig = {
-    Environment = [
-      "OLLAMA_HOST=0.0.0.0:11434"
-    ];
-  };
-
-  services.open-webui = {
-    enable = true;
-    environment = {
-      ANONYMIZED_TELEMETRY = "False";
-      SCARF_NO_ANALYTICS = "True";
-      DO_NOT_TRACK = "True";
-
-      OLLAMA_API_BASE_URL = "http://127.0.0.1:11434/api";
-      OLLAMA_BASE_URL = "http://127.0.0.1:11434";
-    };
-  };
-
-  environment.sessionVariables =  {
-    ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
-    ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
-  };
-
-  environment.interactiveShellInit = ''
-    alias rebuild='sudo nixos-rebuild switch'
-
-    alias try='nix-shell -p'
-
-    alias size='du -hs'
-  '';
+  programs.kdeconnect.enable = true;
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
@@ -218,6 +146,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
