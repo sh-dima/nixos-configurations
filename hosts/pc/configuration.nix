@@ -102,6 +102,7 @@
   #  wget
     git
     vscodium
+    nixd
   ];
 
   home-manager.sharedModules = [
