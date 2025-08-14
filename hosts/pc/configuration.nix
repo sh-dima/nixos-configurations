@@ -105,6 +105,7 @@
     git
     vscodium
     nixd
+    zip
 
     librewolf
   ];
