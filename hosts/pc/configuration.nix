@@ -111,6 +111,9 @@
   ];
 
   services.flatpak.enable = true;
+  services.flatpak.packages = [
+    "org.vinegarhq.Sober"
+  ];
 
   programs.kdeconnect.enable = true;
 
