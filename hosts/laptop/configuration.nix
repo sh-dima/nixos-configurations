@@ -114,6 +114,7 @@
 
     sqlitebrowser
     gnupg
+    zip
     ghostscript
     tetex
     texlivePackages.dvisvgm
