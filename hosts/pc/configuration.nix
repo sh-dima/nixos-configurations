@@ -108,6 +108,7 @@
     zip
 
     librewolf
+    freetube
   ];
 
   services.flatpak.enable = true;
