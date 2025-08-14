@@ -13,6 +13,25 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, ... }@inputs: {
+    nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/pc/configuration.nix
+        ./hosts/pc/hardware-configuration.nix
+        home-manager.nixosModules.default
+
+        nix-flatpak.nixosModules.nix-flatpak
+
+        {
+          nixpkgs.overlays = [
+            nix4vscode.overlays.forVscode
+          ];
+        }
+      ];
+
+      specialArgs = { inherit inputs self; };
+    };
+
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
