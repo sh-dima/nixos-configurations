@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -103,6 +103,13 @@
     git
     vscodium
   ];
+
+  home-manager.sharedModules = [
+    inputs.plasma-manager.homeManagerModules.plasma-manager
+  ];
+
+  home-manager.backupFileExtension = "bak";
+  home-manager.users.enderman = (import ./users/enderman.nix { inherit inputs pkgs; });
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
