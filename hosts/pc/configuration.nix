@@ -104,6 +104,8 @@
     librewolf
   ];
 
+  programs.kdeconnect.enable = true;
+
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
