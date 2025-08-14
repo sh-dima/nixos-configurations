@@ -110,6 +110,8 @@
     librewolf
   ];
 
+  services.flatpak.enable = true;
+
   programs.kdeconnect.enable = true;
 
   home-manager.sharedModules = [
