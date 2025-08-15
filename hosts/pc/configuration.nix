@@ -111,6 +111,8 @@
     freetube
   ];
 
+  programs.steam.enable = true;
+
   services.flatpak.enable = true;
 
   programs.kdeconnect.enable = true;
