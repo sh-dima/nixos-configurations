@@ -109,6 +109,7 @@
 
     librewolf
     freetube
+    bitwarden-desktop
   ];
 
   programs.steam.enable = true;
