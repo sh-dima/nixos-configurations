@@ -118,6 +118,7 @@
     bitwarden-desktop
 
     prismlauncher
+    inkscape
   ];
 
   programs.steam.enable = true;
