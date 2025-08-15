@@ -23,6 +23,7 @@
     "editor.renderWhitespace" = "boundary";
 
     "git.confirmSync" = false;
+    "git.autofetch" = true;
 
     "extensions.autoUpdate" = false;
 
