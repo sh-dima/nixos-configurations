@@ -19,6 +19,10 @@
     "flakes"
   ];
 
+  nix.gc.automatic = true;
+  nix.gc.dates = "daily";
+  nix.settings.auto-optimise-store = true;
+
   networking.hostName = "pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
