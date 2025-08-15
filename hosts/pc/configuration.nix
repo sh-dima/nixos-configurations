@@ -110,6 +110,8 @@
     librewolf
     freetube
     bitwarden-desktop
+
+    prismlauncher
   ];
 
   programs.steam.enable = true;

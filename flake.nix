@@ -10,9 +10,11 @@
 
     nix4vscode.url = "github:nix-community/nix4vscode";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+
+    prismlauncher.url = "github:PrismLauncher/PrismLauncher";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, prismlauncher, ... }@inputs: {
     nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -25,6 +27,7 @@
         {
           nixpkgs.overlays = [
             nix4vscode.overlays.forVscode
+            prismlauncher.overlays.default
           ];
         }
       ];
