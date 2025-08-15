@@ -106,6 +106,7 @@
     vscodium
     nixd
     zip
+    unzip
 
     librewolf
     freetube
