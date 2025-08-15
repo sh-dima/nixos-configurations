@@ -111,6 +111,7 @@
     nixd
     zip
     unzip
+    sqlitebrowser
 
     librewolf
     freetube
