@@ -117,6 +117,7 @@
 
     prismlauncher
     inkscape
+    krita
   ];
 
   programs.steam.enable = true;
