@@ -107,6 +107,7 @@
     zip
     unzip
     sqlitebrowser
+    transmission_4-gtk
 
     librewolf
     freetube
