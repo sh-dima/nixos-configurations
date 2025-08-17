@@ -56,6 +56,8 @@
     "editor.insertSpaces" = false;
     "editor.tabSize" = 2;
 
+    "markdown.updateLinksOnFileMove.enabled" = "prompt";
+
     "prettier.useTabs" = true;
     "prettier.printWidth" = 100000;
     "prettier.singleAttributePerLine" = true;
