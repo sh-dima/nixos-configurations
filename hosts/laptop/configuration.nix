@@ -126,7 +126,6 @@
     imagemagick
     vlc
 
-    androidsdk
     jadx
 
     vscodium
