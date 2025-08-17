@@ -143,7 +143,6 @@
 
     ollama
     open-webui
-    oterm
 
     obs-studio
   ];
