@@ -5,6 +5,10 @@
 { inputs, pkgs, ... }:
 
 {
+  imports = [
+    ../../modules/generic/shell.nix
+  ];
+
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
@@ -175,14 +179,6 @@
     ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
     ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
   };
-
-  environment.interactiveShellInit = ''
-    alias rebuild='sudo nixos-rebuild switch'
-
-    alias try='nix-shell -p'
-
-    alias size='du -hs'
-  '';
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
