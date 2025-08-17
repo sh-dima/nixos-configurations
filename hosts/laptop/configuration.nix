@@ -155,14 +155,6 @@
 
   services.flatpak.enable = true;
 
-  services.ollama.enable = true;
-
-  systemd.services.ollama.serviceConfig = {
-    Environment = [
-      "OLLAMA_HOST=0.0.0.0:11434"
-    ];
-  };
-
   environment.sessionVariables =  {
     ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
     ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
