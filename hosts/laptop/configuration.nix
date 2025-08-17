@@ -7,6 +7,7 @@
 {
   imports = [
     ../../modules/generic/shell.nix
+    ../../modules/generic/llm.nix
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -161,18 +162,6 @@
     Environment = [
       "OLLAMA_HOST=0.0.0.0:11434"
     ];
-  };
-
-  services.open-webui = {
-    enable = true;
-    environment = {
-      ANONYMIZED_TELEMETRY = "False";
-      SCARF_NO_ANALYTICS = "True";
-      DO_NOT_TRACK = "True";
-
-      OLLAMA_API_BASE_URL = "http://127.0.0.1:11434/api";
-      OLLAMA_BASE_URL = "http://127.0.0.1:11434";
-    };
   };
 
   environment.sessionVariables =  {
