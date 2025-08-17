@@ -119,6 +119,7 @@
     tetex
     texlivePackages.dvisvgm
     imagemagick
+    vlc
 
     androidsdk
     jadx

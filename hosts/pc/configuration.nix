@@ -2,14 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -18,6 +13,10 @@
     "nix-command"
     "flakes"
   ];
+
+  nix.gc.automatic = true;
+  nix.gc.dates = "daily";
+  nix.settings.auto-optimise-store = true;
 
   networking.hostName = "pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -106,9 +105,22 @@
     vscodium
     nixd
     zip
+    unzip
+    sqlitebrowser
+    transmission_4-gtk
+    vlc
+    python3
 
     librewolf
+    freetube
+    bitwarden-desktop
+
+    prismlauncher
+    inkscape
+    krita
   ];
+
+  programs.steam.enable = true;
 
   services.flatpak.enable = true;
   services.flatpak.packages = [

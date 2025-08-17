@@ -23,6 +23,8 @@
       committers = "! git log --format='%cN <%cE>' | sort -u";
       contributors = "! git log --format='%aN <%aE>%n%cN <%cE>' | sort -u";
 
+      count = "rev-list --count HEAD";
+
       ls = "ls-files";
 
       back = "checkout HEAD^1";

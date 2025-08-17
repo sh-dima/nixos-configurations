@@ -6,11 +6,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1754138575,
-        "narHash": "sha256-6foT7Sflve4XuLnBKkgN9b9IP4FvdoBA2XQ2IyXmbog=",
+        "lastModified": 1755002386,
+        "narHash": "sha256-5Q7o8nv1EQi7oYD1k1F8/d+3WUiNDg9JOH8KWgP/6WQ=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "27c945a6450d42c62f7e41019d7931b426bb786f",
+        "rev": "170f218715e93fc36a9077a926eb8516d789138b",
         "type": "gitlab"
       },
       "original": {
@@ -60,6 +60,22 @@
         "type": "github"
       }
     },
+    "libnbtplusplus": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744811532,
+        "narHash": "sha256-qhmjaRkt+O7A+gu6HjUkl7QzOEb4r8y8vWZMG2R/C6o=",
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "rev": "531449ba1c930c98e0bcf5d332b237a8566f9d78",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "type": "github"
+      }
+    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1739444422,
@@ -82,11 +98,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1754360260,
-        "narHash": "sha256-g2N2c/efHYGY8cSAR9NSYY0bMb0mslAfjox7o/EPGKw=",
+        "lastModified": 1755137232,
+        "narHash": "sha256-8x6Xed/9XjSP1GVLPSlk+cQnF9MSZ/j/HDE9g54Gjso=",
         "owner": "nix-community",
         "repo": "nix4vscode",
-        "rev": "4b3043768d60a1883d3a2a00f8cfb3b6a8571718",
+        "rev": "e6fa9eddc2b67098ee98aea7c0ddb47d2cf4bb20",
         "type": "github"
       },
       "original": {
@@ -113,11 +129,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1754292888,
-        "narHash": "sha256-1ziydHSiDuSnaiPzCQh1mRFBsM2d2yRX9I+5OPGEmIE=",
+        "lastModified": 1753345091,
+        "narHash": "sha256-CdX2Rtvp5I8HGu9swBmYuq+ILwRxpXdJwlpg8jvN4tU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ce01daebf8489ba97bd1609d185ea276efdeb121",
+        "rev": "3ff0e34b1383648053bba8ed03f201d3466f90c9",
         "type": "github"
       },
       "original": {
@@ -145,11 +161,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1754292888,
-        "narHash": "sha256-1ziydHSiDuSnaiPzCQh1mRFBsM2d2yRX9I+5OPGEmIE=",
+        "lastModified": 1755078291,
+        "narHash": "sha256-Hu/gTDoi4uy6TAKISPHQusSMy8U6xUbLSDjKBYdhDIY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ce01daebf8489ba97bd1609d185ea276efdeb121",
+        "rev": "3385ca0cd7e14c1a1eb80401fe011705ff012323",
         "type": "github"
       },
       "original": {
@@ -175,22 +191,74 @@
         "type": "github"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1754498491,
+        "narHash": "sha256-erbiH2agUTD0Z30xcVSFcDHzkRvkRXOQ3lb887bcVrs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c2ae88e026f9525daf89587f3cbee584b92b6134",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1754372727,
-        "narHash": "sha256-1lHtwGBmRoc9TkKG1EL9DhPkB82ozEJYSDffnpd1fHQ=",
+        "lastModified": 1754501628,
+        "narHash": "sha256-FExJ54tVB5iu7Dh2tLcyCSWpaV+lmUzzWKZUkemwXvo=",
         "owner": "nix-community",
         "repo": "plasma-manager",
-        "rev": "88e41436997e9badacafa057969a2bea3a55e48c",
+        "rev": "cca090f8115c4172b9aef6c5299ae784bdd5e133",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "plasma-manager",
+        "type": "github"
+      }
+    },
+    "prismlauncher": {
+      "inputs": {
+        "libnbtplusplus": "libnbtplusplus",
+        "nixpkgs": "nixpkgs_6",
+        "qrcodegenerator": "qrcodegenerator"
+      },
+      "locked": {
+        "lastModified": 1755266062,
+        "narHash": "sha256-gpdgTkfbvW38CHj49/xz5P5+1j1ZyW2rBiYlIu/YYH8=",
+        "owner": "PrismLauncher",
+        "repo": "PrismLauncher",
+        "rev": "3c93ce8385af1b7611982c352af6b19e89b46fc9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PrismLauncher",
+        "repo": "PrismLauncher",
+        "type": "github"
+      }
+    },
+    "qrcodegenerator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737616857,
+        "narHash": "sha256-6SugPt0lp1Gz7nV23FLmsmpfzgFItkSw7jpGftsDPWc=",
+        "owner": "nayuki",
+        "repo": "QR-Code-generator",
+        "rev": "2c9044de6b049ca25cb3cd1649ed7e27aa055138",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nayuki",
+        "repo": "QR-Code-generator",
         "type": "github"
       }
     },
@@ -201,7 +269,8 @@
         "nix-flatpak": "nix-flatpak",
         "nix4vscode": "nix4vscode",
         "nixpkgs": "nixpkgs_4",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "prismlauncher": "prismlauncher"
       }
     },
     "systems": {
