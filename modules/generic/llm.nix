@@ -1,4 +1,11 @@
+{ pkgs, ... }:
+
 {
+  environment.systemPackages = with pkgs; [
+    ollama
+    open-webui
+  ];
+
   services.ollama.enable = true;
 
   systemd.services.ollama.serviceConfig = {

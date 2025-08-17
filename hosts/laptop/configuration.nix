@@ -141,9 +141,6 @@
 
     inkscape
 
-    ollama
-    open-webui
-
     obs-studio
   ];
 
