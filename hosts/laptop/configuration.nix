@@ -122,7 +122,6 @@
 
     vscodium
 
-    asymptote
     deno
     nixd
     steam-run-free
