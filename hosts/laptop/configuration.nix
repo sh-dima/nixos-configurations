@@ -112,10 +112,6 @@
     sqlitebrowser
     gnupg
     zip
-    ghostscript
-    tetex
-    texlivePackages.dvisvgm
-    imagemagick
     vlc
 
     jadx
@@ -141,10 +137,6 @@
   programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
-
-  environment.sessionVariables =  {
-    ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
-  };
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
