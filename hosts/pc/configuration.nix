@@ -5,6 +5,11 @@
 { pkgs, inputs, ... }:
 
 {
+  imports = [
+    ../../modules/generic/shell.nix
+    ../../modules/generic/llm.nix
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
