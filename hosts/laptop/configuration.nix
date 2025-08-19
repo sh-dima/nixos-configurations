@@ -8,6 +8,7 @@
   imports = [
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
+    ../../modules/generic/java.nix
   ];
 
   hardware.bluetooth.enable = true;
@@ -132,9 +133,6 @@
   ];
 
   programs.kdeconnect.enable = true;
-
-  programs.java.enable = true;
-  programs.java.package = pkgs.jdk;
 
   services.flatpak.enable = true;
 
