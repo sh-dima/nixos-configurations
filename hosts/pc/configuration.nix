@@ -111,6 +111,7 @@
     prismlauncher
     inkscape
     krita
+    obs-studio
   ];
 
   programs.steam.enable = true;
