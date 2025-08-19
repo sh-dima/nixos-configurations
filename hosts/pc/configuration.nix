@@ -105,6 +105,7 @@
     vlc
     python3
     gradle
+    jadx
 
     librewolf
     freetube
