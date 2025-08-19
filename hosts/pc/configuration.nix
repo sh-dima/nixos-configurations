@@ -104,6 +104,7 @@
     transmission_4-gtk
     vlc
     python3
+    gradle
 
     librewolf
     freetube
