@@ -8,6 +8,7 @@
   imports = [
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
+    ../../modules/generic/java.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
