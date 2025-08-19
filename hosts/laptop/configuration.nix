@@ -5,10 +5,14 @@
 { inputs, pkgs, ... }:
 
 {
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  imports = [
+    ../../modules/generic/shell.nix
+    ../../modules/generic/llm.nix
+  ];
+
+  hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -26,20 +30,16 @@
     "enderman"
   ];
 
-  networking.hostName = "laptop"; # Define your hostname.
+  networking.hostName = "laptop";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Dublin";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -68,7 +68,6 @@
     variant = "";
   };
 
-  # Configure console keymap
   console.keyMap = "uk";
 
   # Enable CUPS to print documents.
@@ -107,26 +106,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget,
     git
     bitwarden-desktop
 
     sqlitebrowser
     gnupg
     zip
-    ghostscript
-    tetex
-    texlivePackages.dvisvgm
-    imagemagick
     vlc
 
-    androidsdk
     jadx
 
     vscodium
 
-    asymptote
     deno
     nixd
     steam-run-free
@@ -136,10 +127,6 @@
     librewolf
 
     inkscape
-
-    ollama
-    open-webui
-    oterm
 
     obs-studio
   ];
@@ -153,39 +140,6 @@
   services.flatpak.packages = [
     "org.vinegarhq.Sober"
   ];
-
-  services.ollama.enable = true;
-
-  systemd.services.ollama.serviceConfig = {
-    Environment = [
-      "OLLAMA_HOST=0.0.0.0:11434"
-    ];
-  };
-
-  services.open-webui = {
-    enable = true;
-    environment = {
-      ANONYMIZED_TELEMETRY = "False";
-      SCARF_NO_ANALYTICS = "True";
-      DO_NOT_TRACK = "True";
-
-      OLLAMA_API_BASE_URL = "http://127.0.0.1:11434/api";
-      OLLAMA_BASE_URL = "http://127.0.0.1:11434";
-    };
-  };
-
-  environment.sessionVariables =  {
-    ANDROID_SDK_ROOT = "${pkgs.androidsdk}/libexec/android-sdk";
-    ASYMPTOTE_DVISVGM = "${pkgs.texlivePackages.dvisvgm}/bin/dvisvgm";
-  };
-
-  environment.interactiveShellInit = ''
-    alias rebuild='sudo nixos-rebuild switch'
-
-    alias try='nix-shell -p'
-
-    alias size='du -hs'
-  '';
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
@@ -201,8 +155,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -220,5 +172,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

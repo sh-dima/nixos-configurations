@@ -9,6 +9,7 @@
       sponsorblock
       blocktube
       darkreader
+      return-youtube-dislikes
     ];
 
     settings = {

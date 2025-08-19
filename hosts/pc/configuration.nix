@@ -5,7 +5,11 @@
 { pkgs, inputs, ... }:
 
 {
-  # Bootloader.
+  imports = [
+    ../../modules/generic/shell.nix
+    ../../modules/generic/llm.nix
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -18,20 +22,16 @@
   nix.gc.dates = "daily";
   nix.settings.auto-optimise-store = true;
 
-  networking.hostName = "pc"; # Define your hostname.
+  networking.hostName = "pc";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Dublin";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_IE.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -87,20 +87,13 @@
     isNormalUser = true;
     description = "User";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
     git
     vscodium
     nixd
@@ -144,8 +137,6 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
@@ -162,5 +153,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
