@@ -16,6 +16,7 @@
     "denoland.vscode-deno.3.45.1"
     "ms-python.python.2025.4.0"
     "esbenp.prettier-vscode.11.0.0"
+    "fwcd.kotlin.0.2.36"
   ];
 
   profiles.default.userSettings = {

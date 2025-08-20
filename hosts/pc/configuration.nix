@@ -8,6 +8,7 @@
   imports = [
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
+    ../../modules/generic/java.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -21,6 +22,11 @@
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
   nix.settings.auto-optimise-store = true;
+
+  nix.settings.trusted-users = [
+    "root"
+    "enderman"
+  ];
 
   networking.hostName = "pc";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -103,6 +109,8 @@
     transmission_4-gtk
     vlc
     python3
+    gradle
+    jadx
 
     librewolf
     freetube
@@ -111,6 +119,7 @@
     prismlauncher
     inkscape
     krita
+    obs-studio
   ];
 
   programs.steam.enable = true;
