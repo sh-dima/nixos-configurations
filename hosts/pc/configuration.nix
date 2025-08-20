@@ -23,6 +23,11 @@
   nix.gc.dates = "daily";
   nix.settings.auto-optimise-store = true;
 
+  nix.settings.trusted-users = [
+    "root"
+    "enderman"
+  ];
+
   networking.hostName = "pc";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
