@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -10,9 +10,6 @@
     ../../modules/generic/llm.nix
     ../../modules/generic/java.nix
   ];
-
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -31,7 +28,7 @@
     "enderman"
   ];
 
-  networking.hostName = "laptop";
+  networking.hostName = "pc";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -41,7 +38,7 @@
 
   time.timeZone = "Europe/Dublin";
 
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.defaultLocale = "en_IE.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IE.UTF-8";
@@ -65,11 +62,9 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "gb";
+    layout = "us";
     variant = "";
   };
-
-  console.keyMap = "uk";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -102,39 +97,36 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.config.android_sdk.accept_license = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    bitwarden-desktop
-
-    sqlitebrowser
-    gnupg
+    vscodium
+    nixd
     zip
+    unzip
+    sqlitebrowser
+    transmission_4-gtk
     vlc
-
+    python3
+    gradle
     jadx
 
-    vscodium
-
-    deno
-    nixd
-    steam-run-free
-
-    gradle
-
     brave
+    freetube
+    bitwarden-desktop
 
+    prismlauncher
     inkscape
-
+    krita
     obs-studio
   ];
 
-  programs.kdeconnect.enable = true;
+  programs.steam.enable = true;
 
   services.flatpak.enable = true;
+
+  programs.kdeconnect.enable = true;
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
@@ -166,5 +158,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

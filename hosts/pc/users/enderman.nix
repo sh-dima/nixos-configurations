@@ -1,0 +1,20 @@
+{ inputs, pkgs }:
+
+{
+  home.stateVersion = "25.05";
+
+  programs = {
+    git = (import ../../../modules/generic/git.nix)
+      // (import ../../../modules/personal/git.nix)
+      // { enable = true; };
+
+    vscode = (import ../../../modules/generic/vscode.nix { inherit pkgs; })
+      // { enable = true; };
+
+    plasma = (import ../../../modules/generic/plasma.nix)
+      // { enable = true; };
+  };
+
+  xdg.mimeApps = (import ../../../modules/generic/xdg.nix)
+    // { enable = true; };
+}

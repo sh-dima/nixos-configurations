@@ -9,9 +9,31 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     nix4vscode.url = "github:nix-community/nix4vscode";
+
+    prismlauncher.url = "github:PrismLauncher/PrismLauncher";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, prismlauncher, ... }@inputs: {
+    nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/pc/configuration.nix
+        ./hosts/pc/hardware-configuration.nix
+        home-manager.nixosModules.default
+
+        nix-flatpak.nixosModules.nix-flatpak
+
+        {
+          nixpkgs.overlays = [
+            nix4vscode.overlays.forVscode
+            prismlauncher.overlays.default
+          ];
+        }
+      ];
+
+      specialArgs = { inherit inputs self; };
+    };
+
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

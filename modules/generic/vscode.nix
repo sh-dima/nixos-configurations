@@ -8,12 +8,15 @@
 
   profiles.default.extensions = pkgs.nix4vscode.forVscode [
     "mhutchie.git-graph.1.30.0"
+    "yandeu.five-server.0.3.9"
 
     "redhat.java.1.43.1"
     "jnoortheen.nix-ide.0.4.22"
     "supakornras.asymptote.2.1.0"
     "denoland.vscode-deno.3.45.1"
+    "ms-python.python.2025.4.0"
     "esbenp.prettier-vscode.11.0.0"
+    "fwcd.kotlin.0.2.36"
   ];
 
   profiles.default.userSettings = {
@@ -22,6 +25,7 @@
     "editor.renderWhitespace" = "boundary";
 
     "git.confirmSync" = false;
+    "git.autofetch" = true;
 
     "extensions.autoUpdate" = false;
 
@@ -53,6 +57,8 @@
     "editor.insertSpaces" = false;
     "editor.tabSize" = 2;
 
+    "markdown.updateLinksOnFileMove.enabled" = "prompt";
+
     "prettier.useTabs" = true;
     "prettier.printWidth" = 100000;
     "prettier.singleAttributePerLine" = true;
@@ -70,6 +76,10 @@
     };
 
     "[json]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    };
+
+    "[html]" = {
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
     };
   };
