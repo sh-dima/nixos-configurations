@@ -5,7 +5,7 @@
 
   profiles.default = {
     extensions.packages = with inputs.firefox-addons.packages.x86_64-linux; [
-      bitwarden
+      # bitwarden
       sponsorblock
       blocktube
       darkreader
