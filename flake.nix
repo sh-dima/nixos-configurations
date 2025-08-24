@@ -14,7 +14,7 @@
     prismlauncher.url = "github:PrismLauncher/PrismLauncher";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4vscode, prismlauncher, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nix-flatpak, nix4vscode, prismlauncher, ... }@inputs: {
     nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -32,7 +32,7 @@
         }
       ];
 
-      specialArgs = { inherit inputs self; };
+      specialArgs = { inherit inputs; };
     };
 
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
@@ -51,7 +51,7 @@
         }
       ];
 
-      specialArgs = { inherit inputs self; };
+      specialArgs = { inherit inputs; };
     };
   };
 }
