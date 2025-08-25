@@ -115,6 +115,7 @@
     brave
     freetube
     bitwarden-desktop
+    obsidian
 
     prismlauncher
     inkscape
