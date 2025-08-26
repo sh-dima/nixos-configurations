@@ -49,8 +49,5 @@
     "bin/"
 
     ".idea/"
-    "gradle/wrapper/"
-    "gradlew"
-    "gradlew.bat"
   ];
 }
