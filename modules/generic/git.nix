@@ -44,4 +44,13 @@
       wipe = "restore .";
     };
   };
+
+  ignores = [
+    "bin/"
+
+    ".idea/"
+    "gradle/wrapper/"
+    "gradlew"
+    "gradlew.bat"
+  ];
 }
