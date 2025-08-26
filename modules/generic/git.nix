@@ -23,6 +23,8 @@
       committers = "! git log --format='%cN <%cE>' | sort -u";
       contributors = "! git log --format='%aN <%aE>%n%cN <%cE>' | sort -u";
 
+      info = "cat-file -p";
+      current = "info HEAD";
       count = "rev-list --count HEAD";
 
       ls = "ls-files";
