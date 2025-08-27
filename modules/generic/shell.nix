@@ -5,5 +5,9 @@
     alias try='nix-shell -p'
 
     alias size='du -hs'
+
+    alias ram='free'
+    alias memory='free'
+    alias mem='free'
   '';
 }

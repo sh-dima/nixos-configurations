@@ -115,6 +115,7 @@
     librewolf
     freetube
     bitwarden-desktop
+    obsidian
 
     prismlauncher
     inkscape
