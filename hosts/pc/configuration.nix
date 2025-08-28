@@ -102,6 +102,7 @@
   environment.systemPackages = with pkgs; [
     git
     vscodium
+    jetbrains.idea-community-src
     nixd
     zip
     unzip
