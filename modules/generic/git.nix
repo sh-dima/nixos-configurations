@@ -46,8 +46,6 @@
   };
 
   ignores = [
-    "bin/"
-
     ".idea/"
   ];
 }
