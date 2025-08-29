@@ -118,6 +118,7 @@
     jadx
 
     vscodium
+    jetbrains.idea-community-src
 
     deno
     nixd
