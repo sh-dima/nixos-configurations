@@ -102,7 +102,9 @@
   environment.systemPackages = with pkgs; [
     git
     vscodium
-    jetbrains.idea-community-src
+    (jetbrains-plugins.lib.buildIdeWithPlugins pkgs.jetbrains.idea-community-src (with pkgs.jetbrains-plugins; [
+      com.github.deeepamin.gitlabciaid."1.0.5"
+    ]))
     nixd
     zip
     unzip

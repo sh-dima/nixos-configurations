@@ -9,6 +9,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     nix4vscode.url = "github:nix-community/nix4vscode";
+    nix-jetbrains-plugins.url = "github:Janrupf/nix-jetbrains-plugin-repository";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
     prismlauncher.url = "github:PrismLauncher/PrismLauncher";
@@ -27,6 +28,7 @@
         {
           nixpkgs.overlays = [
             nix4vscode.overlays.forVscode
+            inputs.nix-jetbrains-plugins.overlays.default
             prismlauncher.overlays.default
           ];
         }
@@ -47,6 +49,7 @@
         {
           nixpkgs.overlays = [
             nix4vscode.overlays.forVscode
+            inputs.nix-jetbrains-plugins.overlays.default
           ];
         }
       ];
