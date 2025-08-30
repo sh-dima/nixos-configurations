@@ -41,6 +41,8 @@
 
       amend = "commit --amend";
       rewrite = "commit --amend --reset-author";
+      revise = "! git add . && git amend";
+      redo = "! git add . && git rewrite";
 
       force = "push --force";
 
