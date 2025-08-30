@@ -31,6 +31,9 @@
 
       check = "ls-remote";
 
+      origin = "remote add origin";
+      upstream = "remote add upstream";
+
       back = "checkout HEAD^1";
       forward = "! git checkout $(git rev-list --topo-order HEAD..main | tail -1)";
 
