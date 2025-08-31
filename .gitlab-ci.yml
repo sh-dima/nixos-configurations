@@ -1,0 +1,24 @@
+image: nixos/nix
+
+stages:
+  - test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - /nix/store
+    - /nix/var/nix/profiles
+    - .cache/nix
+
+variables:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
+
+before_script:
+  - nix --version
+  - nix flake show
+
+test:
+  stage: test
+  script:
+    - nix build .#nixosConfigurations.pc.config.system.build.toplevel
+    - nix build .#nixosConfigurations.laptop.config.system.build.toplevel
