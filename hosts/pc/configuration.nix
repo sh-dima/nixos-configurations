@@ -9,6 +9,8 @@
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
     ../../modules/generic/java.nix
+
+    ../../modules/generic/idea.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -102,9 +104,6 @@
   environment.systemPackages = with pkgs; [
     git
     vscodium
-    (jetbrains-plugins.lib.buildIdeWithPlugins pkgs.jetbrains.idea-community-src (with pkgs.jetbrains-plugins; [
-      com.github.deeepamin.gitlabciaid."1.0.5"
-    ]))
     nixd
     zip
     unzip

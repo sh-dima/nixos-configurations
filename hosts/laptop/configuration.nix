@@ -9,6 +9,8 @@
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
     ../../modules/generic/java.nix
+
+    ../../modules/generic/idea.nix
   ];
 
   hardware.bluetooth.enable = true;
@@ -118,7 +120,6 @@
     jadx
 
     vscodium
-    jetbrains.idea-community-src
 
     deno
     nixd
