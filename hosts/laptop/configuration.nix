@@ -125,8 +125,6 @@
     nixd
     steam-run-free
 
-    gradle
-
     librewolf
 
     inkscape
