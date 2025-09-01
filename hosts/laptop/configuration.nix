@@ -116,6 +116,7 @@
     gnupg
     zip
     vlc
+    aircrack-ng
 
     jadx
 
