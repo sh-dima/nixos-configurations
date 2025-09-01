@@ -117,6 +117,7 @@
     zip
     vlc
     aircrack-ng
+    wirelesstools
 
     jadx
 
