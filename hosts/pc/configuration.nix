@@ -122,6 +122,7 @@
     inkscape
     krita
     obs-studio
+    kdePackages.kdenlive
   ];
 
   programs.steam.enable = true;
