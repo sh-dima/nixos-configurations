@@ -37,6 +37,8 @@
       back = "checkout HEAD^1";
       forward = "! git checkout $(git rev-list --topo-order HEAD..main | tail -1)";
 
+      first = "! git checkout `git rev-list --max-parents=0 HEAD | tail -n 1`";
+
       change = "! git add . && git commit";
 
       amend = "commit --amend";
