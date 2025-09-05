@@ -11,5 +11,7 @@
     alias mem='free'
 
     alias recall='history | grep'
+
+    PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\w]\$\[\033[0m\] '
   '';
 }
