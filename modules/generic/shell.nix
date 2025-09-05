@@ -9,5 +9,7 @@
     alias ram='free'
     alias memory='free'
     alias mem='free'
+
+    alias recall='history | grep'
   '';
 }
