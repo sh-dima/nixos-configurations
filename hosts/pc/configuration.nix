@@ -119,6 +119,7 @@
     obsidian
 
     prismlauncher
+    mcpelauncher-ui-qt
     inkscape
     krita
     obs-studio
