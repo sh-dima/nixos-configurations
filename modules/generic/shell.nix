@@ -5,6 +5,7 @@
     alias rebuild='sudo nixos-rebuild switch'
 
     alias try='nix-shell -p'
+    alias tmp='cd $(mktemp -d)'
 
     alias size='du -hs'
 
