@@ -110,6 +110,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    git-filter-repo
     bitwarden-desktop
 
     sqlitebrowser

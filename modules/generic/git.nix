@@ -47,6 +47,18 @@
       revise = "! git add . && git amend";
       redo = "! git add . && git rewrite";
 
+      rename = "!sh -c 'git filter-repo --commit-callback \"\
+        old_name = b\\\"$1\\\"; \
+        old_email = b\\\"$2\\\"; \
+        new_name = b\\\"$3\\\"; \
+        new_email = b\\\"$4\\\"; \
+        if commit.author_name == old_name: \
+            commit.author_name = new_name; \
+            commit.author_email = new_email; \
+        if commit.committer_name == old_name: \
+            commit.committer_name = new_name; \
+            commit.committer_email = new_email\" --force' -";
+
       force = "push --force";
 
       wipe = "restore .";

@@ -103,6 +103,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    git-filter-repo
     vscodium
     nixd
     zip
