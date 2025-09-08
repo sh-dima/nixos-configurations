@@ -67,8 +67,10 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
+    layout = "gb,ru";
+    variant = ",phonetic";
+
+    options = "grp:win_space_toggle";
   };
 
   console.keyMap = "uk";
