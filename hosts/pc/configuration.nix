@@ -95,6 +95,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.enderman = {
     isNormalUser = true;
+    home = "/home/enderman";
     description = "User";
     extraGroups = [ "networkmanager" "wheel" ];
   };
