@@ -56,8 +56,11 @@
   };
 
   ignores = [
+    ".cache/"
     "*.tmp"
 
     ".idea/"
+    ".bash_history"
+    ".python_history"
   ];
 }
