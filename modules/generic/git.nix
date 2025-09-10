@@ -56,6 +56,8 @@
   };
 
   ignores = [
+    "*.tmp"
+
     ".idea/"
   ];
 }
