@@ -6,10 +6,15 @@
 
     push = {
       autoSetupRemote = true;
+      recurseSubmodules = "on-demand";
     };
 
     clean = {
       requireForce = false;
+    };
+
+    submodule = {
+      recurse = true;
     };
 
     advice = {
