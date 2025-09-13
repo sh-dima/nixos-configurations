@@ -19,10 +19,10 @@ git filter-repo --commit-callback "
 	new_name = b\"$new_name\"
 	new_email = b\"$new_email\"
 
-	if commit.author_name == old_name:
+	if commit.author_name == old_name and commit.author_email == old_email:
 			commit.author_name = new_name
 			commit.author_email = new_email
-	if commit.committer_name == old_name:
+	if commit.committer_name == old_name and commit.committer_email == old_email:
 			commit.committer_name = new_name
 			commit.committer_email = new_email
 " --force
