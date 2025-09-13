@@ -107,6 +107,7 @@
   environment.systemPackages = with pkgs; [
     git
     git-filter-repo
+    age
     vscodium
     nixd
     zip
