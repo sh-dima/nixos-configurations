@@ -2,6 +2,8 @@
   description = "Esoteric Enderman's NixOS configuration";
 
   inputs = {
+    sops-nix.url = "github:mic92/sops-nix";
+
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     home-manager.url = "github:nix-community/home-manager?ref=release-25.05";
     plasma-manager.url = "github:nix-community/plasma-manager";
