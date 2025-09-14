@@ -98,6 +98,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.mutableUsers = false;
   users.users.enderman = {
     isNormalUser = true;
     description = "User";
