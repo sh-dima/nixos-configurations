@@ -2,6 +2,11 @@
   description = "Esoteric Enderman's NixOS configuration";
 
   inputs = {
+    secrets = {
+      url = "git+ssh://git@gitlab.com/esotericenderman/secrets.git?ref=main&shallow=1";
+      flake = false;
+    };
+
     sops-nix.url = "github:mic92/sops-nix";
 
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
