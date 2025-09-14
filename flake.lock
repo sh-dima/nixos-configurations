@@ -434,10 +434,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1757857241,
-        "narHash": "sha256-aK8sQcxpP31KGE2RlIU/PQUWsLfTo+flwtM5nTObL48=",
+        "lastModified": 1757861778,
+        "narHash": "sha256-RGsxu2IqVwZBUiQpXgjb7sPxUYutQ87NhiDR9izumT4=",
         "ref": "main",
-        "rev": "bd87eeeb8510456a050b26d6461fdf0569fc8104",
+        "rev": "f9fee48e5c0c930f87a146d95e9570096c3dbcad",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab.com/shdima/secrets.git"
