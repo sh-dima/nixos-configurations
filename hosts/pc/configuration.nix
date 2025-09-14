@@ -108,6 +108,7 @@
     git
     git-filter-repo
     age
+    sops
     vscodium
     nixd
     zip

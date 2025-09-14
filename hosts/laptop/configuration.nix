@@ -114,6 +114,8 @@
     git
     git-filter-repo
     bitwarden-desktop
+    age
+    sops
 
     sqlitebrowser
     gnupg
