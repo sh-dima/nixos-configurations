@@ -99,10 +99,13 @@
   users.users.enderman = {
     isNormalUser = true;
     home = "/home/enderman";
-    description = "User";
     hashedPasswordFile = config.sops.secrets."hosts/pc/password".path;
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
+  system.activationScripts.setUserDescription.text = ''
+    usermod -c "$(cat ${config.sops.secrets."user/name".path})" enderman
+  '';
 
   nixpkgs.config.allowUnfree = true;
 

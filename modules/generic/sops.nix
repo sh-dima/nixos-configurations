@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 let
   secrets = builtins.toString inputs.secrets;
 in
@@ -12,8 +12,11 @@ in
     age.keyFile = "/home/enderman/.config/sops/age/keys.txt";
 
     secrets = {
-      "user/name" = { };
-      
+      "user/name" = {
+        owner = "root";
+        group = "root";
+       };
+
       "hosts/pc/password" = {
         neededForUsers = true;
       };
