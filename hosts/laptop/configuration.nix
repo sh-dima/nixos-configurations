@@ -6,6 +6,8 @@
 
 {
   imports = [
+    ../../modules/generic/sops.nix
+
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
     ../../modules/generic/java.nix

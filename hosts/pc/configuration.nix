@@ -2,10 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   imports = [
+    ../../modules/generic/sops.nix
+
     ../../modules/generic/shell.nix
     ../../modules/generic/llm.nix
     ../../modules/generic/java.nix
@@ -98,6 +100,7 @@
     isNormalUser = true;
     home = "/home/enderman";
     description = "User";
+    hashedPasswordFile = config.sops.secrets."hosts/pc/password".path;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
