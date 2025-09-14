@@ -384,6 +384,7 @@
         "nixpkgs": "nixpkgs_5",
         "plasma-manager": "plasma-manager",
         "prismlauncher": "prismlauncher",
+        "secrets": "secrets",
         "sops-nix": "sops-nix"
       }
     },
@@ -428,6 +429,24 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757857241,
+        "narHash": "sha256-aK8sQcxpP31KGE2RlIU/PQUWsLfTo+flwtM5nTObL48=",
+        "ref": "main",
+        "rev": "bd87eeeb8510456a050b26d6461fdf0569fc8104",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@gitlab.com/shdima/secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@gitlab.com/shdima/secrets.git"
       }
     },
     "sops-nix": {
