@@ -20,6 +20,10 @@ in
       "hosts/pc/password" = {
         neededForUsers = true;
       };
+
+      "hosts/laptop/password" = {
+        neededForUsers = true;
+      };
     };
   };
 }
