@@ -108,6 +108,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  system.activationScripts.setUserDescription.text = ''
+    usermod -c "$(cat ${config.sops.secrets."user/name".path})" enderman
+  '';
+
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.config.android_sdk.accept_license = true;
