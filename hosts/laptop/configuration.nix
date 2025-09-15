@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, ... }:
 
 {
   imports = [
@@ -104,6 +104,7 @@
   users.users.enderman = {
     isNormalUser = true;
     description = "User";
+    hashedPasswordFile = config.sops.secrets."hosts/laptop/password".path;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
