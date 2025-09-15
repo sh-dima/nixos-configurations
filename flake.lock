@@ -434,10 +434,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1757861778,
-        "narHash": "sha256-RGsxu2IqVwZBUiQpXgjb7sPxUYutQ87NhiDR9izumT4=",
+        "lastModified": 1757958902,
+        "narHash": "sha256-B56krpdhTU1NHeyNVoPcdXwttH/ryoGrw5QnJt4nXT4=",
         "ref": "main",
-        "rev": "3300e25b8420b87f94a85ed06d7fbdc8da982f19",
+        "rev": "20ee73c408751d05ad3a8366a5591cae80202f48",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab.com/esotericenderman/secrets.git"
