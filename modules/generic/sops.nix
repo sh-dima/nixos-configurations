@@ -15,6 +15,8 @@ in
       "user/name" = {
         owner = "root";
         group = "root";
+
+        neededForUsers = true;
        };
 
       "hosts/pc/password" = {
