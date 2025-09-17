@@ -10,6 +10,7 @@
       blocktube
       darkreader
       return-youtube-dislikes
+      violentmonkey
     ];
 
     settings = {
