@@ -5,6 +5,14 @@ old_email=$2
 new_name=$3
 new_email=$4
 
+if [ "$new_name" == "" ]; then
+	new_name="$(git config user.name)"
+fi
+
+if [ "$new_email" == "" ]; then
+	new_email="$(git config user.email)"
+fi
+
 echo "Renaming $old_name <$old_email> to $new_name <$new_email>"
 
 if git remote get-url origin > /dev/null 2>&1; then
