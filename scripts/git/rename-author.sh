@@ -24,17 +24,17 @@ else
 fi
 
 git filter-repo --commit-callback "
-	old_name = b\"$old_name\"
-	old_email = b\"$old_email\"
-	new_name = b\"$new_name\"
-	new_email = b\"$new_email\"
+	old_name = \"$old_name\"
+	old_email = \"$old_email\"
+	new_name = \"$new_name\"
+	new_email = \"$new_email\"
 
-	if commit.author_name == old_name and commit.author_email == old_email:
-			commit.author_name = new_name
-			commit.author_email = new_email
-	if commit.committer_name == old_name and commit.committer_email == old_email:
-			commit.committer_name = new_name
-			commit.committer_email = new_email
+	if commit.author_name.decode('utf-8') == old_name and commit.author_email.decode('utf-8') == old_email:
+			commit.author_name = new_name.encode('utf-8')
+			commit.author_email = new_email.encode('utf-8')
+	if commit.committer_name.decode('utf-8') == old_name and commit.committer_email.decode('utf-8') == old_email:
+			commit.committer_name = new_name.encode('utf-8')
+			commit.committer_email = new_email.encode('utf-8')
 " --force
 
 if [ "$has_origin" = true ]; then
