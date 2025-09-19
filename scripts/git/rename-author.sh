@@ -5,6 +5,8 @@ old_email=$2
 new_name=$3
 new_email=$4
 
+echo "Renaming $old_name <$old_email> to $new_name <$new_email>"
+
 if git remote get-url origin > /dev/null 2>&1; then
 	origin=$(git remote get-url origin)
 
