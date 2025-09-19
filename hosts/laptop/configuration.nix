@@ -103,7 +103,6 @@
   users.mutableUsers = false;
   users.users.enderman = {
     isNormalUser = true;
-    description = "User";
     home = "/home/enderman";
     hashedPasswordFile = config.sops.secrets."hosts/laptop/password".path;
     extraGroups = [ "networkmanager" "wheel" ];
