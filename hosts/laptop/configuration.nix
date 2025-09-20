@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ../../modules/generic/nix.nix
     ../../modules/generic/sops.nix
 
     ../../modules/generic/shell.nix
@@ -20,20 +21,6 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.settings.auto-optimise-store = true;
-
-  nix.settings.trusted-users = [
-    "root"
-    "dima"
-  ];
 
   networking.hostName = "laptop";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
