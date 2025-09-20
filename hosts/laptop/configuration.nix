@@ -32,7 +32,6 @@
 
   nix.settings.trusted-users = [
     "root"
-    "enderman"
     "dima"
   ];
 
@@ -102,13 +101,6 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;
-  users.users.enderman = {
-    isNormalUser = true;
-    home = "/home/enderman";
-    hashedPasswordFile = config.sops.secrets."hosts/laptop/password".path;
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
   users.users.dima = {
     isNormalUser = true;
     home = "/home/dima";
@@ -120,7 +112,6 @@
   };
 
   system.activationScripts.setUserDescription.text = ''
-    usermod -c "$(cat ${config.sops.secrets."user/name".path})" enderman
     usermod -c "$(cat ${config.sops.secrets."user/name".path})" dima
   '';
 
@@ -168,8 +159,7 @@
   ];
 
   home-manager.backupFileExtension = "bak";
-  home-manager.users.enderman = (import ./users/enderman.nix { inherit inputs pkgs; });
-  home-manager.users.dima = (import ./users/enderman.nix { inherit inputs pkgs; });
+  home-manager.users.dima = (import ./users/dima.nix { inherit inputs pkgs; });
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
