@@ -39,6 +39,8 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.networkmanager.enable = true;
+  networking.networkmanager.unmanaged = [
+  ];
 
   time.timeZone = "Europe/Dublin";
 
