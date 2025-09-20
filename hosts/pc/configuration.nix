@@ -101,6 +101,7 @@
   users.users.dima = {
     isNormalUser = true;
     home = "/home/dima";
+    uid = 1000;
     hashedPasswordFile = config.sops.secrets."hosts/pc/password".path;
     extraGroups = [
       "networkmanager"
