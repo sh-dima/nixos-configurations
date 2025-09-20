@@ -130,6 +130,7 @@
     jadx
 
     librewolf
+    brave
     freetube
     bitwarden-desktop
     obsidian
