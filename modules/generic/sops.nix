@@ -9,7 +9,7 @@ in
 
   sops = {
     defaultSopsFile = "${secrets}/secrets.yaml";
-    age.keyFile = "/home/enderman/.config/sops/age/keys.txt";
+    age.keyFile = "/home/dima/.config/sops/age/keys.txt";
 
     secrets = {
       "user/name" = {
