@@ -215,7 +215,7 @@ generationsDiff=$((currentGen-oldestGen))
 ## Figure out what we should do, based on generations and options
 if [[ elapsedDays -le keepDays ]]; then
     printf "All generations are no more than $keepDays days older than current generation. \nOldest gen days difference from current gen: $elapsedDays \n\n\tNothing to do!\n"
-    exit 4;
+    exit 0;
 elif [[ generationsDiff -lt keepGens ]]; then
     printf "Oldest generation ($oldestGen) is only $generationsDiff generations behind current ($currentGen). \n\n\t Nothing to do!\n"
     exit 5;
