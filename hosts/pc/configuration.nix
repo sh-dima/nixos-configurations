@@ -30,6 +30,7 @@
   nix.settings.trusted-users = [
     "root"
     "enderman"
+    "dima"
   ];
 
   networking.hostName = "pc";
@@ -103,8 +104,19 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  users.users.dima = {
+    isNormalUser = true;
+    home = "/home/dima";
+    hashedPasswordFile = config.sops.secrets."hosts/pc/password".path;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+  };
+
   system.activationScripts.setUserDescription.text = ''
     usermod -c "$(cat ${config.sops.secrets."user/name".path})" enderman
+    usermod -c "$(cat ${config.sops.secrets."user/name".path})" dima
   '';
 
   nixpkgs.config.allowUnfree = true;
@@ -151,6 +163,7 @@
 
   home-manager.backupFileExtension = "bak";
   home-manager.users.enderman = (import ./users/enderman.nix { inherit inputs pkgs; });
+  home-manager.users.dima = (import ./users/enderman.nix { inherit inputs pkgs; });
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
