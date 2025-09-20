@@ -86,6 +86,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;
   users.users.dima = {
+    name = "dima";
     isNormalUser = true;
     home = "/home/dima";
     uid = 1000;

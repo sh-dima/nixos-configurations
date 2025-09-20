@@ -92,6 +92,7 @@
   users.mutableUsers = false;
   users.users.dima = {
     isNormalUser = true;
+    name = "dima";
     home = "/home/dima";
     uid = 1000;
     hashedPasswordFile = config.sops.secrets."hosts/laptop/password".path;
