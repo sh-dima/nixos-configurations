@@ -101,12 +101,6 @@
     usermod -c "$(cat ${config.sops.secrets."user/name".path})" dima
   '';
 
-  system.activationScripts.trimGenerations.text = ''
-    source ${config.system.build.setEnvironment}
-
-    echo Y | ${../../scripts/nix/trim-generations.sh} 10 7 system
-  '';
-
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
