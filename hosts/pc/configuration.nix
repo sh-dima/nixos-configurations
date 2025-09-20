@@ -121,6 +121,7 @@
     git-filter-repo
     age
     sops
+    usbimager
     vscodium
     nixd
     zip
