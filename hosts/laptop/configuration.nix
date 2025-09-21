@@ -147,6 +147,7 @@
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeModules.plasma-manager
+    inputs.sops-nix.homeManagerModules.sops
   ];
 
   home-manager.backupFileExtension = "bak";
