@@ -437,7 +437,7 @@
         "lastModified": 1758445463,
         "narHash": "sha256-pekm9Z40NBNqQ5WtCHXZRyVTdOuqpVHJljQfkCMkHoY=",
         "ref": "main",
-        "rev": "0385a51696f33a66abfe1359edd95b1e72763b81",
+        "rev": "998a1a626cd9a35d2bf125b2d07e8795d6394391",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab.com/esotericenderman/secrets.git"
