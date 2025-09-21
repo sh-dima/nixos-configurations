@@ -1,5 +1,7 @@
 { inputs, pkgs, ... }:
-
+let
+  secrets = builtins.toString inputs.secrets;
+in
 {
   home.stateVersion = "24.11";
 
@@ -7,6 +9,16 @@
     ../../../modules/generic/git.nix
     ../../../modules/personal/git.nix
   ];
+
+  sops = {
+    defaultSopsFile = "${secrets}/secrets.yaml";
+    age.keyFile = "/home/dima/.config/sops/age/keys.txt";
+
+    secrets = {
+      "git/username" = {};
+      "git/email" = {};
+    };
+  };
 
   programs = {
     vscode = (import ../../../modules/generic/vscode.nix { inherit pkgs; })
