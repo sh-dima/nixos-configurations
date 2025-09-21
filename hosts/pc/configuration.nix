@@ -143,10 +143,11 @@
 
   home-manager.sharedModules = [
     inputs.plasma-manager.homeModules.plasma-manager
+    inputs.sops-nix.homeManagerModules.sops
   ];
 
   home-manager.backupFileExtension = "bak";
-  home-manager.users.dima = (import ./users/dima.nix { inherit inputs pkgs; });
+  home-manager.users.dima = (import ./users/dima.nix { inherit inputs pkgs config; });
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
