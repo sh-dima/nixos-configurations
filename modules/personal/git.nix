@@ -1,4 +1,6 @@
 {
-  userName = "Esoteric Enderman";
-  userEmail = "EsotericEnderman@proton.me";
+  programs.git = {
+    userName = "Esoteric Enderman";
+    userEmail = "EsotericEnderman@proton.me";
+  };
 }
