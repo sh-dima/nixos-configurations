@@ -1,4 +1,4 @@
-{ inputs, pkgs }:
+{ inputs, pkgs, ... }:
 let
   secrets = builtins.toString inputs.secrets;
 in
