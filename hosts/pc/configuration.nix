@@ -126,6 +126,7 @@
     freetube
     bitwarden-desktop
     obsidian
+    libreoffice
 
     prismlauncher
     mcpelauncher-ui-qt
