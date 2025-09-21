@@ -3,11 +3,12 @@
 {
   home.stateVersion = "25.05";
 
-  programs = {
-    git = (import ../../../modules/generic/git.nix)
-      // (import ../../../modules/personal/git.nix)
-      // { enable = true; };
+  imports = [
+    ../../../modules/generic/git.nix
+    ../../../modules/personal/git.nix
+  ];
 
+  programs = {
     vscode = (import ../../../modules/generic/vscode.nix { inherit pkgs; })
       // { enable = true; };
 
