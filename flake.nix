@@ -57,6 +57,7 @@
           nixpkgs.overlays = [
             nix4vscode.overlays.forVscode
             inputs.nix-jetbrains-plugins.overlays.default
+            prismlauncher.overlays.default
           ];
         }
       ];

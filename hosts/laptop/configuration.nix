@@ -138,6 +138,7 @@
 
     inkscape
 
+    prismlauncher
     obs-studio
   ];
 
