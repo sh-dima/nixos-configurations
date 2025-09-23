@@ -1,9 +1,9 @@
 {
-  description = "Esoteric Enderman's NixOS configuration";
+  description = "Dima's NixOS configuration";
 
   inputs = {
     secrets = {
-      url = "git+ssh://git@gitlab.com/esotericenderman/secrets.git?ref=main&shallow=1";
+      url = "git+ssh://git@gitlab.com/dimafyi/secrets.git?ref=main&shallow=1";
       flake = false;
     };
 

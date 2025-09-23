@@ -440,13 +440,13 @@
         "rev": "c205fcab0a8f51b4731a97e0510ef351d0dd4fa8",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@gitlab.com/esotericenderman/secrets.git"
+        "url": "ssh://git@gitlab.com/dimafyi/secrets.git"
       },
       "original": {
         "ref": "main",
         "shallow": true,
         "type": "git",
-        "url": "ssh://git@gitlab.com/esotericenderman/secrets.git"
+        "url": "ssh://git@gitlab.com/dimafyi/secrets.git"
       }
     },
     "sops-nix": {
