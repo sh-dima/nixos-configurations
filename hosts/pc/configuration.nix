@@ -122,6 +122,7 @@
     jadx
 
     librewolf
+    protonmail-desktop
     brave
     freetube
     bitwarden-desktop
