@@ -1,5 +1,5 @@
 {
-  description = "Dima's NixOS configuration";
+  description = "Dima's NixOS configurations";
 
   inputs = {
     secrets = {
