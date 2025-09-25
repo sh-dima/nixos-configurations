@@ -119,6 +119,7 @@
     transmission_4-gtk
     vlc
     python3
+    mat2
     jadx
 
     librewolf
