@@ -124,6 +124,8 @@
 
     librewolf
     protonmail-desktop
+    protonvpn-gui
+    proton-pass
     brave
     freetube
     bitwarden-desktop
