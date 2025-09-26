@@ -55,8 +55,8 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us,ru";
-    variant = ",phonetic";
+    layout = "us,ru,de";
+    variant = ",phonetic,";
 
     options = "grp:win_space_toggle";
   };
