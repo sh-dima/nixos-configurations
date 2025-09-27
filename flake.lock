@@ -434,10 +434,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1758741615,
-        "narHash": "sha256-5Bz1OB5/pqtK6XvIr9rusyOjlgcnPJ2faasK1vNCc04=",
+        "lastModified": 1758975383,
+        "narHash": "sha256-BBHjzuZ6IuH/PGCR6RVxzNTBDaJGEVRcKK/FTS9TR1k=",
         "ref": "main",
-        "rev": "bf8a09f42c69ee569d23bd44028989c44e9a279f",
+        "rev": "b337bbf7bbbbeafc4d72f0488aaf8ee58560639d",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab.com/dimafyi/secrets.git"
