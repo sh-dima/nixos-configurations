@@ -119,6 +119,7 @@
     transmission_4-gtk
     vlc
     python3
+    exiftool
     mat2
     jadx
 
