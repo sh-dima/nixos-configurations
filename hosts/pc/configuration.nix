@@ -137,6 +137,7 @@
     mcpelauncher-ui-qt
     inkscape
     krita
+    gimp
     obs-studio
     kdePackages.kdenlive
   ];
