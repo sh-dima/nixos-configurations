@@ -14,7 +14,7 @@
   },
   "autoStartJobs": false,
   "excludedPackages": "",
-  "saveOption": "ASK",
+  "saveOption": "NEVER",
   "shortcuts": {},
   "showHeapUsageBar": false,
   "alwaysSelectOpened": false,
