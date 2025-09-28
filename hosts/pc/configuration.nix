@@ -153,7 +153,7 @@
     inputs.sops-nix.homeManagerModules.sops
   ];
 
-  home-manager.backupFileExtension = "bak";
+  home-manager.backupFileExtension = pkgs.lib.readFile "${pkgs.runCommand "timestamp" {} "echo -n `date '+%Y%m%d%H%M%S'` > $out"}" + ".bak";
   home-manager.users.dima = (import ./users/dima.nix { inherit inputs pkgs config; });
 
   # Some programs need SUID wrappers, can be configured further or are
