@@ -1,4 +1,5 @@
 {
+	"saveOption": "NEVER",
 	"editorThemePath": "/org/fife/ui/rsyntaxtextarea/themes/monokai.xml",
 	"lafTheme": "FlatLaf Dark"
 }
