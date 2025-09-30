@@ -12,18 +12,18 @@ in
     age.keyFile = "/home/dima/.config/sops/age/keys.txt";
 
     secrets = {
-      "user/name" = {
+      "users/dima/name" = {
         owner = "root";
         group = "root";
 
         neededForUsers = true;
        };
 
-      "hosts/pc/password" = {
+      "hosts/pc/users/dima/password-hash" = {
         neededForUsers = true;
       };
 
-      "hosts/laptop/password" = {
+      "hosts/laptop/users/dima/password-hash" = {
         neededForUsers = true;
       };
     };
