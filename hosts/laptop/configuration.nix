@@ -95,7 +95,7 @@
     name = "dima";
     home = "/home/dima";
     uid = 1000;
-    hashedPasswordFile = config.sops.secrets."hosts/laptop/password".path;
+    hashedPasswordFile = config.sops.secrets."hosts/laptop/users/dima/password-hash".path;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -103,7 +103,7 @@
   };
 
   system.activationScripts.setUserDescription.text = ''
-    usermod -c "$(cat ${config.sops.secrets."user/name".path})" dima
+    usermod -c "$(cat ${config.sops.secrets."users/dima/name".path})" dima
   '';
 
   nixpkgs.config.allowUnfree = true;
