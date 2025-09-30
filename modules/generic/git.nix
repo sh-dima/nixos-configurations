@@ -28,9 +28,9 @@
       alias = {
         profile = "! git config user.name && git config user.email";
 
-        authors = "! git log --format='%aN <%aE>' | sort -u";
-        committers = "! git log --format='%cN <%cE>' | sort -u";
-        contributors = "! git log --format='%aN <%aE>%n%cN <%cE>' | sort -u";
+        authors = "!f() { ${../../scripts/git/authors.sh} \"$@\"; }; f";
+        committers = "!f() { ${../../scripts/git/committers.sh} \"$@\"; }; f";
+        contributors = "!f() { ${../../scripts/git/contributors.sh} \"$@\"; }; f";
 
         info = "cat-file -p";
         current = "info HEAD";
