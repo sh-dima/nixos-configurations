@@ -135,6 +135,7 @@
     steam-run-free
 
     librewolf
+    brave
     libreoffice
 
     inkscape
