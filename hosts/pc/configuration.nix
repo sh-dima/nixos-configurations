@@ -58,7 +58,7 @@
     layout = "us,ru,de";
     variant = ",phonetic,";
 
-    options = "grp:win_space_toggle";
+    options = "grp:alt_shift_toggle";
   };
 
   # Enable CUPS to print documents.
