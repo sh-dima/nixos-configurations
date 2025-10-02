@@ -138,6 +138,8 @@
     brave
     libreoffice
 
+    protonvpn-gui
+
     inkscape
 
     prismlauncher
