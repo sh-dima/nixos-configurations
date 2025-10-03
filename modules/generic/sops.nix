@@ -26,6 +26,11 @@ in
       "hosts/laptop/users/dima/password-hash" = {
         neededForUsers = true;
       };
+
+      "assets/images/pfps/dima.png" = {
+        format = "binary";
+        sopsFile = "${secrets}/assets/images/pfps/dima.json";
+      };
     };
   };
 }
