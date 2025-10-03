@@ -19,6 +19,7 @@
 
   profiles.default.userSettings = {
     "workbench.startupEditor" = "none";
+    "explorer.confirmDelete" = false;
 
     "editor.renderWhitespace" = "boundary";
 
