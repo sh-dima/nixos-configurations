@@ -135,6 +135,7 @@
 
     prismlauncher
     mcpelauncher-ui-qt
+    mcaselector
     inkscape
     krita
     gimp
