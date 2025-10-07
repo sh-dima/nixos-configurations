@@ -137,6 +137,7 @@
     librewolf
     brave
     libreoffice
+    obsidian
 
     protonvpn-gui
 
