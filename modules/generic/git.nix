@@ -61,6 +61,18 @@
 
         wipe = "restore .";
       };
+
+      "url \"git@gitlab.com:shdima/\"" = {
+        insteadOf = "me:";
+      };
+
+      "url \"git@github.com:\"" = {
+        insteadOf = "gh:";
+      };
+
+      "url \"git@gitlab.com:\"" = {
+        insteadOf = "gl:";
+      };
     };
 
     ignores = [
