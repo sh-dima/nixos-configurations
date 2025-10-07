@@ -7,6 +7,11 @@
         defaultBranch = "main";
       };
 
+      status = {
+        branch = true;
+        showStash = true;
+      };
+
       push = {
         autoSetupRemote = true;
         recurseSubmodules = "on-demand";
