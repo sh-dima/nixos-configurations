@@ -110,6 +110,7 @@
     git-filter-repo
     age
     sops
+    typst
     usbimager
     vscodium
     nixd
