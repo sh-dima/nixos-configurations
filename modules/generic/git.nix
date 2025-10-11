@@ -3,6 +3,10 @@
     enable = true;
 
     extraConfig = {
+      core = {
+        editor = "codium --wait";
+      };
+
       init = {
         defaultBranch = "main";
       };
