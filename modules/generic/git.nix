@@ -49,6 +49,9 @@
 
         check = "ls-remote";
 
+        code = "config --local core.editor \"codium --wait\"";
+        idea = "config --local core.editor \"idea-community --wait\"";
+
         origin = "remote add origin";
         upstream = "remote add upstream";
 
