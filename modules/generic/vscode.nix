@@ -14,6 +14,7 @@
     "supakornras.asymptote.2.1.0"
     "denoland.vscode-deno.3.45.1"
     "ms-python.python.2025.4.0"
+    "rickvansloten.bbcode.0.0.2"
     "esbenp.prettier-vscode.11.0.0"
   ];
 
