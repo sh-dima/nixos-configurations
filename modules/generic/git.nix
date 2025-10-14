@@ -21,6 +21,10 @@
         recurseSubmodules = "on-demand";
       };
 
+      pull = {
+        ff = "only";
+      };
+
       clean = {
         requireForce = false;
       };
