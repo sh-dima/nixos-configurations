@@ -138,6 +138,8 @@
     brave
     libreoffice
     obsidian
+    typst
+    typstwriter
 
     protonvpn-gui
 
