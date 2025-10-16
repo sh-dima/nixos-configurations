@@ -151,6 +151,8 @@
 
   services.flatpak.enable = true;
 
+  virtualisation.waydroid.enable = true;
+
   home-manager.sharedModules = [
     inputs.plasma-manager.homeModules.plasma-manager
     inputs.sops-nix.homeManagerModules.sops
