@@ -129,6 +129,7 @@
     protonmail-desktop
     protonvpn-gui
     proton-pass
+    protonmail-export
     brave
     freetube
     bitwarden-desktop
