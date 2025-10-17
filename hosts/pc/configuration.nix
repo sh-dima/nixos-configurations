@@ -123,6 +123,7 @@
     exiftool
     mat2
     jadx
+    tinymist
 
     librewolf
     protonmail-desktop
