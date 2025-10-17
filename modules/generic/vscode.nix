@@ -16,6 +16,7 @@
     "ms-python.python.2025.4.0"
     "rickvansloten.bbcode.0.0.2"
     "esbenp.prettier-vscode.11.0.0"
+    "myriad-dreamin.tinymist.0.13.28"
   ];
 
   profiles.default.userSettings = {
