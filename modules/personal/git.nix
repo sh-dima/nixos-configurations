@@ -3,6 +3,6 @@
 {
   programs.git = {
     userName = "Дима Ш.";
-    userEmail = "DimaFYI@proton.me";
+    userEmail = "dima.o.sh@proton.me";
   };
 }
