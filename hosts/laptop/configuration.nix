@@ -138,6 +138,7 @@
     brave
     libreoffice
     obsidian
+    element-desktop
     typst
     typstwriter
 
