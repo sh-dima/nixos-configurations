@@ -143,6 +143,7 @@
     typstwriter
 
     protonvpn-gui
+    protonmail-export
 
     inkscape
 
