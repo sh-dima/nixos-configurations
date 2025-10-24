@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     ollama
     open-webui
+    llama-cpp
   ];
 
   services.ollama.enable = true;
