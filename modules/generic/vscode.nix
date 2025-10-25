@@ -9,7 +9,6 @@
   profiles.default.extensions = pkgs.nix4vscode.forVscode [
     "mhutchie.git-graph.1.30.0"
     "yandeu.five-server.0.3.9"
-    "ggml-org.llama-vscode.0.0.34"
 
     "jnoortheen.nix-ide.0.4.22"
     "supakornras.asymptote.2.1.0"
@@ -32,8 +31,6 @@
     "extensions.autoUpdate" = false;
 
     "redhat.telemetry.enabled" = false;
-
-    "llama-vscode.ask_upgrade_llamacpp_hours" = 7200000;
 
     "java.jdt.ls.java.home" = pkgs.jdk;
 
