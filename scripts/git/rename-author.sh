@@ -5,6 +5,19 @@ old_email=$2
 new_name=$3
 new_email=$4
 
+if [ "$old_name" == "" ] || [ "$old_email" == "" ]; then
+	contributor_count=$(git contributors | wc -l | tr -d ' ')
+
+	if [ "$contributor_count" -eq 1 ]; then
+		contributor="$(git contributors)"
+
+		old_name="$(echo "$contributor" | sed -E 's/^(.*) <.*>$/\1/')"
+		old_email="$(echo "$contributor" | sed -E 's/^.* <(.*)>$/\1/')"
+	else
+		exit 255
+	fi
+fi
+
 if [ "$new_name" == "" ]; then
 	new_name="$(git config user.name)"
 fi
