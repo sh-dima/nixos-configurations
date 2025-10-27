@@ -13,6 +13,7 @@
     "jnoortheen.nix-ide.0.4.22"
     "supakornras.asymptote.2.1.0"
     "denoland.vscode-deno.3.45.1"
+    "svelte.svelte-vscode.109.11.2"
     "ms-python.python.2025.4.0"
     "rickvansloten.bbcode.0.0.2"
     "esbenp.prettier-vscode.11.0.0"
@@ -54,6 +55,8 @@
 
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
+
+    "svelte.enable-ts-plugin" = true;
 
     "editor.insertSpaces" = false;
     "editor.tabSize" = 2;
