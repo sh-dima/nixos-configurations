@@ -1,9 +1,9 @@
 #!/bin/sh
 
-old_name=$1
-old_email=$2
-new_name=$3
-new_email=$4
+old_name="$1"
+old_email="$2"
+new_name="$3"
+new_email="$4"
 
 if [ "$old_name" == "" ] || [ "$old_email" == "" ]; then
 	contributor_count=$(git contributors | wc -l | tr -d ' ')
