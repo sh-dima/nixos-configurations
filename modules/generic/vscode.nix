@@ -31,6 +31,10 @@
 
     "extensions.autoUpdate" = false;
 
+    "files.exclude" = {
+      "**/.git" = false;
+    };
+
     "redhat.telemetry.enabled" = false;
 
     "java.jdt.ls.java.home" = pkgs.jdk;
