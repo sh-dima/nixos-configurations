@@ -36,19 +36,16 @@ else
 	has_origin=false
 fi
 
-git filter-repo --commit-callback "
-	old_name = \"$old_name\"
-	old_email = \"$old_email\"
-	new_name = \"$new_name\"
-	new_email = \"$new_email\"
+mkdir -p ./.git/filter-repo/rename/
 
-	if commit.author_name.decode('utf-8') == old_name and commit.author_email.decode('utf-8') == old_email:
-			commit.author_name = new_name.encode('utf-8')
-			commit.author_email = new_email.encode('utf-8')
-	if commit.committer_name.decode('utf-8') == old_name and commit.committer_email.decode('utf-8') == old_email:
-			commit.committer_name = new_name.encode('utf-8')
-			commit.committer_email = new_email.encode('utf-8')
-" --force
+echo "$old_name" > ./.git/filter-repo/rename/old-name
+echo "$old_email" > ./.git/filter-repo/rename/old-email
+echo "$new_name" > ./.git/filter-repo/rename/new-name
+echo "$new_email" > ./.git/filter-repo/rename/new-email
+
+script_dir="$(dirname "$(realpath "$0")")"
+
+git filter-repo --commit-callback "$(cat "$script_dir/commit_callback.py")" --force
 
 if [ "$has_origin" = true ]; then
 	git remote add origin "$origin"

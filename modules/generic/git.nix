@@ -71,7 +71,7 @@
         revise = "! git add . && git amend";
         redo = "! git add . && git rewrite";
 
-        rename = "!f() { ${../../scripts/git/rename-author.sh} \"$@\"; }; f";
+        rename = "!f() { ${../../scripts/git/rename}/rename-author.sh \"$@\"; }; f";
 
         force = "push --force";
 
