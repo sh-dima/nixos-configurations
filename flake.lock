@@ -437,7 +437,7 @@
         "lastModified": 1759487998,
         "narHash": "sha256-qvRkAPRWtmJ1vlhgsuqdXNmwUzR951Yu0sZ5awuAEO8=",
         "ref": "main",
-        "rev": "43ba558cbaeab7a766693a7c8504200aef9affac",
+        "rev": "3e4b932b46b6e2ba499848f56e1581722b4e377f",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@gitlab.com/dimafyi/secrets.git"
