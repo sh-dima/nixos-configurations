@@ -1,5 +1,7 @@
 import re
 
+from git_filter_repo import Commit
+
 from re import Match
 from typing import AnyStr
 
@@ -14,6 +16,8 @@ with open('.git/filter-repo/rename/new-name', 'r') as file:
 
 with open('.git/filter-repo/rename/new-email', 'r') as file:
 	new_email = file.read().strip()
+
+commit: Commit
 
 if commit.author_name.decode('utf-8') == old_name and commit.author_email.decode('utf-8') == old_email:
 		commit.author_name = new_name.encode('utf-8')
