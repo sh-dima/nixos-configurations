@@ -1,2 +1,5 @@
 # Nix build results
 result
+
+# Python virtual environment
+.venv/
