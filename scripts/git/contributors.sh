@@ -8,6 +8,6 @@ for directory in "$@"
 do
 	(
 		cd "$directory"
-		git log --format='%aN <%aE>%n%cN <%cE>' | sort -u
+		git log --all --format='%aN <%aE>%n%cN <%cE>' | sort -u
 	)
 done
