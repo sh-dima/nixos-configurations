@@ -20,6 +20,8 @@
     # Original: '\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '
     PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\w]\$ \[\033[0;34m\]$(__git_ps1 "(%s) ")\[\033[0m\]'
 
+    export VIRTUAL_ENV_DISABLE_PROMPT=1
+
     loop() {
       for dir in */ ; do
         [ -d "$dir" ] || continue
