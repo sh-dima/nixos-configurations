@@ -57,6 +57,8 @@
     "java.eclipse.downloadSources" = true;
     "java.maven.downloadSources" = true;
 
+    "python.terminal.activateEnvironment" = false;
+
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
 
