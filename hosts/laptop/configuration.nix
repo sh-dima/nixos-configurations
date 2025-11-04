@@ -142,6 +142,7 @@
     element-desktop
     typst
     typstwriter
+    tinymist
 
     protonvpn-gui
     protonmail-export
