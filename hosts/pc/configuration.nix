@@ -108,6 +108,7 @@
   environment.systemPackages = with pkgs; [
     git
     git-filter-repo
+    gh
     age
     sops
     typst

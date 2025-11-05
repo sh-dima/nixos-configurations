@@ -115,6 +115,7 @@
   environment.systemPackages = with pkgs; [
     git
     git-filter-repo
+    gh
     restic
     bitwarden-desktop
     age
