@@ -72,6 +72,7 @@
         redo = "! git add . && git rewrite";
 
         rename = "!f() { ${../../scripts/git/rename}/rename-author.sh \"$@\"; }; f";
+        clone-all = "!f() { ${../../scripts/git/clone-all.sh} \"$@\"; }; f";
 
         force = "push --force";
 
