@@ -25,6 +25,7 @@
     "explorer.confirmDelete" = false;
 
     "editor.renderWhitespace" = "boundary";
+    "diffEditor.ignoreTrimWhitespace" = false;
 
     "git.confirmSync" = false;
     "git.autofetch" = true;
