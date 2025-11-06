@@ -7,6 +7,8 @@
   profiles.default.enableExtensionUpdateCheck = false;
 
   profiles.default.extensions = pkgs.nix4vscode.forVscode [
+    "PKief.material-icon-theme.5.27.0"
+
     "mhutchie.git-graph.1.30.0"
     "yandeu.five-server.0.3.9"
 
@@ -26,6 +28,8 @@
 
     "editor.renderWhitespace" = "boundary";
     "diffEditor.ignoreTrimWhitespace" = false;
+
+    "workbench.iconTheme" = "material-icon-theme";
 
     "git.confirmSync" = false;
     "git.autofetch" = true;
