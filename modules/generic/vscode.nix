@@ -34,6 +34,7 @@
 
     "files.exclude" = {
       "**/.git" = false;
+      "**/__pycache__" = true;
     };
 
     "redhat.telemetry.enabled" = false;
