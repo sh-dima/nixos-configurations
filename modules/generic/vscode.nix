@@ -38,7 +38,10 @@
 
     "files.exclude" = {
       "**/.git" = false;
+
+      "**/.venv" = true;
       "**/__pycache__" = true;
+      "**/.pytest_cache" = true;
     };
 
     "redhat.telemetry.enabled" = false;
