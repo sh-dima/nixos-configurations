@@ -39,6 +39,8 @@
     "files.exclude" = {
       "**/.git" = false;
 
+      "**/.idea" = true;
+
       "**/.venv" = true;
       "**/__pycache__" = true;
       "**/.pytest_cache" = true;
