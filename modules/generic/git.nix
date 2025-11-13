@@ -73,6 +73,7 @@
 
         rename = "!f() { ${../../scripts/git/rename}/rename-author.sh \"$@\"; }; f";
         clone-all = "!f() { ${../../scripts/git/clone-all.sh} \"$@\"; }; f";
+        clone-gists = "!f() { ${../../scripts/git/clone-gists}/clone-gists.sh \"$@\"; }; f";
 
         force = "push --force";
 
