@@ -16,4 +16,4 @@ done
 script_dir="$(dirname "$(realpath "$0")")"
 
 # Rename folders
-"$script_dir/rename_gists.py"
+nix-shell -p python3 --command "\"$script_dir/rename_gists.py\""
