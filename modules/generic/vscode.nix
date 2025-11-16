@@ -91,6 +91,8 @@
 
     "files.associations" = {
       "flake.lock" = "json";
+      "LICENSE" = "plaintext";
+      "LICENSE-*" = "plaintext";
     };
 
     "workbench.editorAssociations" = {
