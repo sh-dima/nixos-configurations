@@ -22,6 +22,9 @@
 
     export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+    export HISTSIZE=-1
+    export HISTFILESIZE=-1
+
     loop() {
       for dir in */ ; do
         [ -d "$dir" ] || continue
