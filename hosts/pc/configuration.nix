@@ -112,6 +112,7 @@
     gh
     age
     gnupg
+    pinentry-qt
     sops
     typst
     usbimager
