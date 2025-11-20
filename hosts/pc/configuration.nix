@@ -111,6 +111,7 @@
     git-remote-gcrypt
     gh
     age
+    gnupg
     sops
     typst
     usbimager
