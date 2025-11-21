@@ -115,6 +115,7 @@
   environment.systemPackages = with pkgs; [
     git
     git-filter-repo
+    git-remote-gcrypt
     gh
     restic
     bitwarden-desktop
