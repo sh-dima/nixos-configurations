@@ -4,7 +4,7 @@
   programs.git = {
     extraConfig = {
       user = {
-        signingKey = "CDAF28E98CED851B";
+        signingKey = "EAA2B2E8A3463680";
       };
     };
   };
