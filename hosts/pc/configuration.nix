@@ -7,6 +7,7 @@
 {
   imports = [
     ../../modules/generic/nix.nix
+    ../../modules/generic/gpg.nix
     ../../modules/generic/sops.nix
 
     ../../modules/generic/shell.nix
@@ -167,15 +168,6 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-
-    settings = {
-      default-cache-ttl = 3600;
-      max-cache-ttl = 86400;
-    };
-  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
