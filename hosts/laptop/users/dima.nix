@@ -5,6 +5,7 @@
   imports = [
     ../../../modules/generic/git.nix
     ../../../modules/personal/git.nix
+    ../modules/personal/git.nix
 
     ../../../modules/generic/jadx
   ];
