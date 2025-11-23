@@ -26,6 +26,7 @@
   profiles.default.userSettings = {
     "workbench.startupEditor" = "none";
     "explorer.confirmDelete" = false;
+    "explorer.autoReveal" = false;
 
     "editor.renderWhitespace" = "boundary";
     "diffEditor.ignoreTrimWhitespace" = false;
