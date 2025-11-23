@@ -111,6 +111,7 @@
     git-filter-repo
     git-remote-gcrypt
     gh
+    gource
     age
     gnupg
     pinentry-qt
