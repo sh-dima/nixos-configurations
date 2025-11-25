@@ -25,6 +25,10 @@
         ff = "only";
       };
 
+      receive = {
+        denyCurrentBranch = "updateInstead";
+      };
+
       clean = {
         requireForce = false;
       };
