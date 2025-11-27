@@ -17,6 +17,7 @@
     "denoland.vscode-deno.3.45.1"
     "svelte.svelte-vscode.109.11.2"
     "ms-python.python.2025.4.0"
+    "tomoki1207.pdf.1.2.2"
     "ms-edu.pxt-vscode-web.1.0.8"
     "rickvansloten.bbcode.0.0.2"
     "esbenp.prettier-vscode.11.0.0"
