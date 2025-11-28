@@ -144,6 +144,7 @@
 
     prismlauncher
     mcpelauncher-ui-qt
+    lutris
     mcaselector
     inkscape
     krita
