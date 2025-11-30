@@ -136,7 +136,6 @@
     tinymist
 
     librewolf
-    protonmail-desktop
     protonvpn-gui
     proton-pass
     protonmail-export
