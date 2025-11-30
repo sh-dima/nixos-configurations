@@ -4,7 +4,7 @@
     enableSSHSupport = true;
 
     settings = {
-      default-cache-ttl = 3600;
+      default-cache-ttl = 3600 * 3;
       max-cache-ttl = 86400;
     };
   };
