@@ -118,6 +118,7 @@
     sops
     typst
     usbimager
+    gnome-disk-utility
     vscodium
     nixd
     zip
