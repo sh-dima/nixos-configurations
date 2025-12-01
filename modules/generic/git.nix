@@ -99,6 +99,7 @@
 
     ignores = [
       ".idea/"
+      "template.iml"
       ".bash_history"
       ".bash_history-[0-9][0-9][0-9][0-9][0-9].tmp"
       ".python_history"
