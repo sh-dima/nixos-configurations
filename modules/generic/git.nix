@@ -56,6 +56,7 @@
         ls = "ls-files";
 
         check = "ls-remote";
+        sync = "!f() { ${../../scripts/git/sync.py} \"$@\"; }; f";
 
         code = "config --local core.editor \"codium --wait\"";
         idea = "config --local core.editor \"idea-community --wait\"";
