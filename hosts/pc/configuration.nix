@@ -140,6 +140,7 @@
     proton-pass
     protonmail-export
     brave
+    geogebra6
     freetube
     bitwarden-desktop
     obsidian
