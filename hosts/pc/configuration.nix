@@ -149,6 +149,7 @@
     prismlauncher
     mcpelauncher-ui-qt
     lutris
+    superTuxKart
     mcaselector
     inkscape
     krita
