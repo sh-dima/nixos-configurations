@@ -10,6 +10,7 @@
     "PKief.material-icon-theme.5.27.0"
 
     "mhutchie.git-graph.1.30.0"
+    "streetsidesoftware.code-spell-checker.4.2.6"
     "yandeu.five-server.0.3.9"
 
     "jnoortheen.nix-ide.0.4.22"
