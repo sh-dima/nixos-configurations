@@ -125,7 +125,7 @@
 
     sqlitebrowser
     gnupg
-    pinentry
+    pinentry-qt
     zip
     vlc
     aircrack-ng
