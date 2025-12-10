@@ -122,6 +122,7 @@
     bitwarden-desktop
     age
     sops
+    wl-clipboard
 
     sqlitebrowser
     gnupg
