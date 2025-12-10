@@ -126,6 +126,7 @@
     nixd
     zip
     unzip
+    wl-clipboard
     sqlitebrowser
     transmission_4-gtk
     vlc
