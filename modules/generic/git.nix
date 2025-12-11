@@ -61,7 +61,7 @@
         code = "config --local core.editor \"codium --wait\"";
         idea = "config --local core.editor \"idea-community --wait\"";
 
-        origin = "remote add origin";
+        origin = "!f() { ${../../scripts/git/origin.py} \"$@\"; }; f";
         upstream = "remote add upstream";
 
         back = "checkout HEAD^1";

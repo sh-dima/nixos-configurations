@@ -118,6 +118,7 @@
     git-filter-repo
     git-remote-gcrypt
     gh
+    python3
     restic
     bitwarden-desktop
     age
