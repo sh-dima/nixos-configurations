@@ -2,13 +2,15 @@
 
 {
   programs.git = {
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Дима Ш.";
+        email = "dima.o.sh@proton.me";
+      };
+
       commit = {
         gpgsign = true;
       };
     };
-
-    userName = "Дима Ш.";
-    userEmail = "dima.o.sh@proton.me";
   };
 }
