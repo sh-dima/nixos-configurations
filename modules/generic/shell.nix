@@ -8,6 +8,7 @@
     alias tmp='cd $(mktemp -d)'
 
     alias size='du -hs'
+    alias count='wc -l'
 
     alias ram='free'
     alias memory='free'
