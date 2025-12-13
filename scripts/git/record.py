@@ -11,6 +11,9 @@ if len(staged) == 0:
 latest = 0
 
 for file in staged:
+	if not os.path.exists(file):
+		continue
+
 	changed_time = os.path.getctime(file) # Last time the file or file metadata was changed
 	if changed_time > latest:
 		latest = changed_time
