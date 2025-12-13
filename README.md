@@ -1,7 +1,14 @@
 NixOS Configurations
 ====================
 
-This repository contains the configurations for my NixOS devices.
+This repository contains the configurations for my NixOS devices. This includes my dotfiles (configuration) for various programs and a few utility scripts.
+
+Dotfiles
+--------
+
+* [Git](./modules/generic/git.nix)
+* [VSCode](./modules/generic/vscode.nix)
+* [Scripts](./scripts/)
 
 Links
 -----
