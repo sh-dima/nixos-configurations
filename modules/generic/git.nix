@@ -69,8 +69,8 @@
 
         first = "! git checkout `git rev-list --max-parents=0 HEAD | tail -n 1`";
 
-        update = "!f() { ${../../scripts/git/record.py} \"$@\"; }; f";
-        change = "! git add . && git record";
+        update = "!f() { ${../../scripts/git/update.py} \"$@\"; }; f";
+        change = "! git add . && git update";
 
         amend = "commit --amend";
         rewrite = "commit --amend --reset-author";
