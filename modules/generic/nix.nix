@@ -7,7 +7,7 @@
   ];
 
   nix.gc.automatic = true;
-  nix.gc.dates = "daily";
+  nix.gc.dates = "weekly";
   nix.settings.auto-optimise-store = true;
 
   nix.settings.keep-outputs = true;
