@@ -82,6 +82,7 @@
         clone-gists = "!f() { ${../../scripts/git/clone-gists}/clone-gists.sh \"$@\"; }; f";
 
         force = "push --force";
+        retag = "force --tags";
 
         wipe = "restore .";
       };
