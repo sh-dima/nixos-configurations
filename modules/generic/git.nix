@@ -69,6 +69,8 @@
 
         first = "! git checkout `git rev-list --max-parents=0 HEAD | tail -n 1`";
 
+        prepare = "!f() { ${../../scripts/git/prepare}/prepare.sh \"$@\"; }; f";
+
         update = "!f() { ${../../scripts/git/update.py} \"$@\"; }; f";
         change = "! git add . && git update";
 
