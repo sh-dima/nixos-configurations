@@ -10,15 +10,21 @@ if len(staged) == 0:
 
 latest = 0
 
-for file in staged:
-	if not os.path.exists(file):
-		continue
+try:
+	with open(".git/prepare/time") as file:
+		latest = float(file.read())
+except:
+	for file in staged:
+		if not os.path.exists(file):
+			continue
 
-	changed_time = os.path.getctime(file) # Last time the file or file metadata was changed
-	if changed_time > latest:
-		latest = changed_time
+		changed_time = os.path.getctime(file) # Last time the file or file metadata was changed
+		if changed_time > latest:
+			latest = changed_time
 
-if latest == 0:
-	raise ValueError("Invalid commit date!")
+	if latest == 0:
+		raise ValueError("Invalid commit date!")
 
 subprocess.run(["git", "commit", f"--date={latest}"])
+
+os.remove(".git/prepare/time")
