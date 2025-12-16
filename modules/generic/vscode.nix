@@ -86,6 +86,8 @@
     "editor.insertSpaces" = false;
     "editor.tabSize" = 2;
 
+    "cSpell.diagnosticLevel" = "Hint";
+
     "markdown.updateLinksOnFileMove.enabled" = "prompt";
 
     "prettier.useTabs" = true;
