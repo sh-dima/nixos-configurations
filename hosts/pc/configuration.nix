@@ -135,6 +135,7 @@
     mat2
     jadx
     tinymist
+    texlive.combined.scheme-full
 
     librewolf
     protonvpn-gui
