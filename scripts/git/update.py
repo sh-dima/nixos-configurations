@@ -27,4 +27,7 @@ except:
 
 subprocess.run(["git", "commit", f"--date={latest}"])
 
-os.remove(".git/prepare/time")
+try:
+	os.remove(".git/prepare/time")
+except:
+	pass # File probably doesn't exist
