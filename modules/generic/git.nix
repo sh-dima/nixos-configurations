@@ -80,6 +80,7 @@
         redo = "! git add . && git rewrite";
 
         rename = "!f() { ${../../scripts/git/rename}/rename-author.sh \"$@\"; }; f";
+        remap-submodule = "!f() { ${../../scripts/git/remap-submodules}/remap-submodule.py \"$@\"; }; f";
         clone-all = "!f() { ${../../scripts/git/clone-all.sh} \"$@\"; }; f";
         clone-gists = "!f() { ${../../scripts/git/clone-gists}/clone-gists.sh \"$@\"; }; f";
 
