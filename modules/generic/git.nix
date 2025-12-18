@@ -54,6 +54,7 @@
         count = "rev-list --count HEAD";
 
         ls = "ls-files";
+        history = "log --follow --";
 
         check = "ls-remote";
         sync = "!f() { ${../../scripts/git/sync.py} \"$@\"; }; f";
