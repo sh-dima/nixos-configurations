@@ -35,6 +35,7 @@
     "diffEditor.ignoreTrimWhitespace" = false;
 
     "workbench.iconTheme" = "material-icon-theme";
+    "window.menuBarVisibility" = "hidden";
 
     "git.confirmSync" = false;
     "git.autofetch" = true;
