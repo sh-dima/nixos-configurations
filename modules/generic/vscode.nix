@@ -23,7 +23,7 @@
     "rickvansloten.bbcode.0.0.2"
     "esbenp.prettier-vscode.11.0.0"
     "James-Yu.latex-workshop"
-    "myriad-dreamin.tinymist.0.13.28"
+    "myriad-dreamin.tinymist.0.14.4"
   ];
 
   profiles.default.userSettings = {
