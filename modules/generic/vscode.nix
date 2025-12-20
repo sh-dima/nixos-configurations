@@ -37,6 +37,12 @@
     "workbench.iconTheme" = "material-icon-theme";
     "window.menuBarVisibility" = "hidden";
 
+    "editor.fontFamily" = "'Fira Code', 'Droid Sans Mono', 'monospace', monospace";
+    "editor.fontLigatures" = true;
+
+    "terminal.integrated.fontFamily" = "'Fira Code'";
+    "terminal.integrated.fontLigatures.enabled" = true;
+
     "git.confirmSync" = false;
     "git.autofetch" = true;
 

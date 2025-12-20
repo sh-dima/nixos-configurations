@@ -157,7 +157,11 @@
 
     prismlauncher
     obs-studio
+
+    fira-code
   ];
+
+  fonts.fontconfig.enable = true;
 
   programs.kdeconnect.enable = true;
 

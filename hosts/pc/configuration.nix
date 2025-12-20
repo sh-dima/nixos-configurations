@@ -158,7 +158,11 @@
     gimp
     obs-studio
     kdePackages.kdenlive
+
+    fira-code
   ];
+
+  fonts.fontconfig.enable = true;
 
   virtualisation.waydroid.enable = true;
   programs.steam.enable = true;
