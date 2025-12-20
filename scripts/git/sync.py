@@ -31,3 +31,7 @@ subprocess.run(
 subprocess.run(
 	["git", "pull"],
 )
+
+subprocess.run(
+	["git", "push"]
+)
