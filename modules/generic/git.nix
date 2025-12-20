@@ -85,8 +85,10 @@
         clone-all = "!f() { ${../../scripts/git/clone-all.sh} \"$@\"; }; f";
         clone-gists = "!f() { ${../../scripts/git/clone-gists}/clone-gists.sh \"$@\"; }; f";
 
+        tags = "push --tags";
+
         force = "push --force";
-        retag = "force --tags";
+        retag = "tags --force";
 
         wipe = "restore .";
       };
