@@ -21,6 +21,7 @@
     "tomoki1207.pdf.1.2.2"
     "ms-edu.pxt-vscode-web.1.0.8"
     "rickvansloten.bbcode.0.0.2"
+    "tamasfe.even-better-toml.0.21.2"
     "esbenp.prettier-vscode.11.0.0"
     "James-Yu.latex-workshop"
     "myriad-dreamin.tinymist.0.14.4"
