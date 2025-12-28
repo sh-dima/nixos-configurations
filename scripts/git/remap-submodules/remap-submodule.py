@@ -45,6 +45,8 @@ subprocess.run(
 
 env["GIT_EDITOR"] = "echo"
 
+repository_root = os.getcwd()
+
 while os.path.exists(".git/rebase-merge/"):
 	if os.path.exists(submodule_path):
 		subprocess.run(["git", "submodule", "update", "--init"])
@@ -57,7 +59,7 @@ while os.path.exists(".git/rebase-merge/"):
 		os.chdir(submodule_path)
 		print(f"[{os.getcwd()}] {current_commit_hash} -> {mapped_commit}")
 		subprocess.run(["git", "checkout", mapped_commit])
-		os.chdir("..")
+		os.chdir(repository_root)
 
 	subprocess.run(["git", "add", "."])
 	subprocess.run(["git", "rebase", "--continue"], env=env)
