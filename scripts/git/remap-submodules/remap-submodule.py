@@ -51,7 +51,7 @@ while os.path.exists(".git/rebase-merge/"):
 		subprocess.run(["git", "restore", "--staged", "."])
 
 		rebase_head = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
-		current_commit_hash = subprocess.run(["git", "rev-parse", f"{rebase_head}:{submodule_path}"], capture_output=True).stdout.strip().decode("utf-8")
+		current_commit_hash = subprocess.run(["git", "rev-parse", f"{rebase_head}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
 		mapped_commit = commit_map[current_commit_hash]
 
 		os.chdir(submodule_path)
