@@ -70,13 +70,19 @@ while os.path.exists(".git/rebase-merge/"):
 			subprocess.run(["git", "restore", "--staged", submodule_path], capture_output=True, check=True)
 
 			current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
-			submodule_mapped_commit = commit_map[current_submodule_commit_hash]
+			
+			if current_submodule_commit_hash in commit_map.keys():
+				submodule_mapped_commit = commit_map[current_submodule_commit_hash]
 
-			os.chdir(submodule_path)
+				os.chdir(submodule_path)
 
-			print(f" [{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}", end="")
-			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True, check=True)
-			os.chdir(repository_root)
+				print(f" [{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}", end="")
+				subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True, check=True)
+				os.chdir(repository_root)
+			else:
+				print(f" [invalid commit hash]", end="")
+				submodule_mapped_commit = current_submodule_commit_hash
+
 			break
 
 	print()
