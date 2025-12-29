@@ -117,6 +117,7 @@
     git
     git-filter-repo
     git-remote-gcrypt
+    gocryptfs
     gh
     python3
     restic
