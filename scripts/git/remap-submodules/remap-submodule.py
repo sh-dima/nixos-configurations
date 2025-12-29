@@ -58,14 +58,13 @@ while os.path.exists(".git/rebase-merge/"):
 
 	elapsed += 1
 
+	subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True)
+	subprocess.run(["git", "restore", "--staged", "."], capture_output=True)
+
+	subprocess.run(["git", "submodule", "update", "--init"], capture_output=True)
+
 	for submodule_path in submodule_paths:
-		for submodule_path in submodule_paths:
-			subprocess.run(["git", "submodule", "deinit", "-f", submodule_path], check=False, capture_output=True)
-
 		if os.path.exists(submodule_path):
-			subprocess.run(["git", "submodule", "update", "--init"], capture_output=True)
-			subprocess.run(["git", "restore", "--staged", "."], capture_output=True)
-
 			current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
 			submodule_mapped_commit = commit_map[current_submodule_commit_hash]
 
