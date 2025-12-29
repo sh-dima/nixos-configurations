@@ -51,7 +51,28 @@ env["GIT_EDITOR"] = "echo"
 
 repository_root = os.getcwd()
 
+Path(".git/remap-submodule/").mkdir(parents=True, exist_ok=True)
+
 commits: dict[str, str] = {}
+old_commits_inverse: dict[str, str] = {}
+
+if os.path.exists(".git/remap-submodule/commit-map"):
+	with open(".git/remap-submodule/commit-map") as map_file:
+		commit_list = map_file.readlines()
+
+	print(f"Found existing commit map with {len(commit_list)} entries")
+
+	for entry in commit_list:
+		split = entry.strip().split(" ")
+
+		first = split[0]
+		second = split[1]
+
+		old_commits_inverse[second] = first
+
+	if len(old_commits_inverse) != len(commit_list):
+		print("fatal: old commit map has duplicate keys")
+		exit(2)
 
 elapsed = 0
 
@@ -85,8 +106,6 @@ while os.path.exists(".git/rebase-merge/"):
 
 			break
 
-	print()
-
 	subprocess.run(["git", "add", "."], check=True)
 	subprocess.run(["git", "rebase", "--continue"], env=env, capture_output=True)
 
@@ -102,17 +121,23 @@ while os.path.exists(".git/rebase-merge/"):
 		check=False
 	).stdout.strip().decode("utf-8")
 
+	if current_hash in old_commits_inverse.keys():
+		current_hash = old_commits_inverse[current_hash]
+		print(f" (-> old {current_hash[0:7]})", end="")
+
+	print()
+
 	if current_hash in commits.keys():
-		print("fatal: mapped the same commit to multiple new commits")
+		print(f"fatal: mapped the same commit ({current_hash[0:7]}) to multiple new commits ({commits[current_hash][0:7]}, {edited_hash[0:7]})")
 		exit(1)
 
 	if edited_hash in commits.values():
-		print("fatal: mapped more than one commit to same new commit")
+		inverted = {v: k for k, v in commits.items()}
+
+		print(f"fatal: mapped more than one commit ({inverted[edited_hash][0:7], current_hash[0:7]}) to same new commit {edited_hash[0:7]}")
 		exit(1)
 
 	commits[current_hash] = edited_hash
-
-Path(".git/remap-submodule/").mkdir(parents=True, exist_ok=True)
 
 with open(".git/remap-submodule/commit-map", "w") as file:
 	lines = [f"{str(item[0])} {str(item[1])}\n" for item in commits.items()]
