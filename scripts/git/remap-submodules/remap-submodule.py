@@ -33,6 +33,8 @@ for entry in commit_list:
 
 	commit_map[first] = second
 
+subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True)
+
 for submodule_path in submodule_paths:
 	subprocess.run(["git", "submodule", "deinit", "-f", submodule_path], check=False)
 
@@ -59,23 +61,27 @@ while os.path.exists(".git/rebase-merge/"):
 	elapsed += 1
 
 	subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True)
-	subprocess.run(["git", "restore", "--staged", "."], capture_output=True)
 
-	subprocess.run(["git", "submodule", "update", "--init"], capture_output=True)
+	print(f"[{current_hash[0:7]}] ({elapsed})", end="")
 
 	for submodule_path in submodule_paths:
 		if os.path.exists(submodule_path):
+			subprocess.run(["git", "submodule", "update", "--init", submodule_path], capture_output=True, check=True)
+			subprocess.run(["git", "restore", "--staged", submodule_path], capture_output=True, check=True)
+
 			current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
 			submodule_mapped_commit = commit_map[current_submodule_commit_hash]
 
 			os.chdir(submodule_path)
 
-			print(f"[{current_hash[0:7]}:{Path(os.getcwd()).relative_to(repository_root)}] ({elapsed}) {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}")
-			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True)
+			print(f" [{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}", end="")
+			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True, check=True)
 			os.chdir(repository_root)
 			break
 
-	subprocess.run(["git", "add", "."])
+	print()
+
+	subprocess.run(["git", "add", "."], check=True)
 	subprocess.run(["git", "rebase", "--continue"], env=env, capture_output=True)
 
 	rebase_in_progress = os.path.exists(".git/rebase-merge/")
