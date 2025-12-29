@@ -103,6 +103,10 @@ while os.path.exists(".git/rebase-merge/"):
 	).stdout.strip().decode("utf-8")
 
 	if current_hash in commits.keys():
+		print("fatal: mapped the same commit to multiple new commits")
+		exit(1)
+
+	if edited_hash in commits.values():
 		print("fatal: mapped more than one commit to same new commit")
 		exit(1)
 
