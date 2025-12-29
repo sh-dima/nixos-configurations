@@ -97,7 +97,7 @@ while os.path.exists(".git/rebase-merge/"):
 
 				os.chdir(submodule_path)
 
-				print(f" [{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}", end="")
+				print(f" [{Path(os.getcwd()).relative_to(repository_root)}: {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}]", end="")
 				subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True, check=True)
 				os.chdir(repository_root)
 			else:
@@ -124,6 +124,8 @@ while os.path.exists(".git/rebase-merge/"):
 	if current_hash in old_commits_inverse.keys():
 		current_hash = old_commits_inverse[current_hash]
 		print(f" (-> old {current_hash[0:7]})", end="")
+
+	print(f" -> {edited_hash[0:7]}", end="")
 
 	print()
 
