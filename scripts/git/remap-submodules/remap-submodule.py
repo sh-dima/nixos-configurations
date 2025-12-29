@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# git remap ./path/to/submodule ./path/to/commit/map
+# git remap ./path/to/commit/map ./path/to/submodule_1 ./path/to/submodule_2 ...
 import sys
 import os
 import subprocess
@@ -8,15 +8,15 @@ from pathlib import Path
 
 arguments_count = len(sys.argv)
 
-if arguments_count != 3:
+if arguments_count < 3:
 	print("Invalid usage!")
-	print("git remap ./path/to/submodule ./path/to/commit/map")
+	print("git remap ./path/to/commit/map ./path/to/submodule_1 ./path/to/submodule_2 ...")
 	exit(1)
 
-submodule_path = sys.argv[1]
-commit_map_path = sys.argv[2]
+commit_map_path = sys.argv[1]
+submodule_paths = sys.argv[2:]
 
-print(f"Remapping submodule '{submodule_path}' using map '{commit_map_path}'")
+print(f"Remapping submodule '{submodule_paths}' using map '{commit_map_path}'")
 
 commit_list: list[str]
 
@@ -33,7 +33,8 @@ for entry in commit_list:
 
 	commit_map[first] = second
 
-subprocess.run(["git", "submodule", "deinit", "-f", submodule_path])
+for submodule_path in submodule_paths:
+	subprocess.run(["git", "submodule", "deinit", "-f", submodule_path], check=False)
 
 env = os.environ.copy()
 env["GIT_SEQUENCE_EDITOR"] = f"\"{os.path.dirname(__file__)}/edit_script.sh\""
@@ -53,18 +54,23 @@ commits: dict[str, str] = {}
 while os.path.exists(".git/rebase-merge/"):
 	current_hash = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
 
-	if os.path.exists(submodule_path):
-		subprocess.run(["git", "submodule", "update", "--init"], capture_output=True)
-		subprocess.run(["git", "restore", "--staged", "."], capture_output=True)
+	for submodule_path in submodule_paths:
+		for submodule_path in submodule_paths:
+			subprocess.run(["git", "submodule", "deinit", "-f", submodule_path], check=False, capture_output=True)
 
-		current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
-		submodule_mapped_commit = commit_map[current_submodule_commit_hash]
+		if os.path.exists(submodule_path):
+			subprocess.run(["git", "submodule", "update", "--init"], capture_output=True)
+			subprocess.run(["git", "restore", "--staged", "."], capture_output=True)
 
-		os.chdir(submodule_path)
+			current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
+			submodule_mapped_commit = commit_map[current_submodule_commit_hash]
 
-		print(f"[{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash} -> {submodule_mapped_commit}")
-		subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True)
-		os.chdir(repository_root)
+			os.chdir(submodule_path)
+
+			print(f"[{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash} -> {submodule_mapped_commit}")
+			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True)
+			os.chdir(repository_root)
+			break
 
 	subprocess.run(["git", "add", "."])
 	subprocess.run(["git", "rebase", "--continue"], env=env, capture_output=True)
