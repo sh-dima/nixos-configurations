@@ -51,8 +51,12 @@ repository_root = os.getcwd()
 
 commits: dict[str, str] = {}
 
+elapsed = 0
+
 while os.path.exists(".git/rebase-merge/"):
 	current_hash = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
+
+	elapsed += 1
 
 	for submodule_path in submodule_paths:
 		for submodule_path in submodule_paths:
@@ -67,7 +71,7 @@ while os.path.exists(".git/rebase-merge/"):
 
 			os.chdir(submodule_path)
 
-			print(f"[{Path(os.getcwd()).relative_to(repository_root)}] {current_submodule_commit_hash} -> {submodule_mapped_commit}")
+			print(f"[{Path(os.getcwd()).relative_to(repository_root)}] ({elapsed}) {current_submodule_commit_hash} -> {submodule_mapped_commit}")
 			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True)
 			os.chdir(repository_root)
 			break
