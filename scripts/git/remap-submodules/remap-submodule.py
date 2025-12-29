@@ -70,7 +70,7 @@ while os.path.exists(".git/rebase-merge/"):
 
 			os.chdir(submodule_path)
 
-			print(f"[{current_hash}:{Path(os.getcwd()).relative_to(repository_root)}] ({elapsed}) {current_submodule_commit_hash} -> {submodule_mapped_commit}")
+			print(f"[{current_hash[0:7]}:{Path(os.getcwd()).relative_to(repository_root)}] ({elapsed}) {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}")
 			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True)
 			os.chdir(repository_root)
 			break
