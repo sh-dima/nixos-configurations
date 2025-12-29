@@ -4,6 +4,8 @@ import sys
 import os
 import subprocess
 
+from pathlib import Path
+
 arguments_count = len(sys.argv)
 
 if arguments_count != 3:
@@ -47,19 +49,46 @@ env["GIT_EDITOR"] = "echo"
 
 repository_root = os.getcwd()
 
+commits: dict[str, str] = {}
+
 while os.path.exists(".git/rebase-merge/"):
+	current_hash = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
+
 	if os.path.exists(submodule_path):
 		subprocess.run(["git", "submodule", "update", "--init"])
 		subprocess.run(["git", "restore", "--staged", "."])
 
-		rebase_head = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
-		current_commit_hash = subprocess.run(["git", "rev-parse", f"{rebase_head}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
-		mapped_commit = commit_map[current_commit_hash]
+		current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
+		submodule_mapped_commit = commit_map[current_submodule_commit_hash]
 
 		os.chdir(submodule_path)
-		print(f"[{os.getcwd()}] {current_commit_hash} -> {mapped_commit}")
-		subprocess.run(["git", "checkout", mapped_commit])
+		print(f"[{os.getcwd()}] {current_submodule_commit_hash} -> {submodule_mapped_commit}")
+		subprocess.run(["git", "checkout", submodule_mapped_commit])
 		os.chdir(repository_root)
 
 	subprocess.run(["git", "add", "."])
 	subprocess.run(["git", "rebase", "--continue"], env=env)
+
+	rebase_in_progress = os.path.exists(".git/rebase-merge/")
+
+	edited_hash = subprocess.run(
+		[
+			"git",
+			"rev-parse",
+			f"HEAD~{1 if rebase_in_progress else 0}"
+		],
+		capture_output=True,
+		check=False
+	).stdout.strip().decode("utf-8")
+
+	if current_hash in commits.keys():
+		print("fatal: mapped more than one commit to same new commit")
+		exit(1)
+
+	commits[current_hash] = edited_hash
+
+Path(".git/remap-submodule/").mkdir(parents=True, exist_ok=True)
+
+with open(".git/remap-submodule/commit-map", "w") as file:
+	lines = [f"{str(item[0])} {str(item[1])}\n" for item in commits.items()]
+	file.writelines(lines)
