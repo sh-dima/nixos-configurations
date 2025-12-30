@@ -158,6 +158,7 @@
     gimp
     obs-studio
     kdePackages.kdenlive
+    element-desktop
 
     fira-code
   ];
