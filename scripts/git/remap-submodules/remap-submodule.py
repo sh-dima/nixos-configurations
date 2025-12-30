@@ -4,7 +4,11 @@ import sys
 import os
 import subprocess
 
+import time
+
 from pathlib import Path
+
+## ARGUMENTS
 
 arguments_count = len(sys.argv)
 
@@ -16,42 +20,16 @@ if arguments_count < 3:
 commit_map_path = sys.argv[1]
 submodule_paths = sys.argv[2:]
 
+## LOG
+
 print(f"Remapping submodule '{submodule_paths}' using map '{commit_map_path}'")
 
-commit_list: list[str]
-
-with open(commit_map_path) as file:
-	commit_list = file.readlines()[1:]
-
-commit_map: dict[str, str] = {}
-
-for entry in commit_list:
-	split = entry.strip().split(" ")
-
-	first = split[0]
-	second = split[1]
-
-	commit_map[first] = second
-
-subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True)
-
-for submodule_path in submodule_paths:
-	subprocess.run(["git", "submodule", "deinit", "-f", submodule_path], check=False)
-
-env = os.environ.copy()
-env["GIT_SEQUENCE_EDITOR"] = f"\"{os.path.dirname(__file__)}/edit_script.sh\""
-
-subprocess.run(
-	["git", "rebase", "-i", "--root"],
-	check=True,
-	env=env
-)
-
-env["GIT_EDITOR"] = "echo"
+## CONSTANTS
 
 repository_root = os.getcwd()
-
 Path(".git/remap-submodule/").mkdir(parents=True, exist_ok=True)
+
+## EXISTING REPOSITORY COMMIT MAP
 
 commits: dict[str, str] = {}
 old_commits_inverse: dict[str, str] = {}
@@ -74,51 +52,104 @@ if os.path.exists(".git/remap-submodule/commit-map"):
 		print("fatal: old commit map has duplicate keys")
 		exit(2)
 
+## SUBMODULE COMMIT MAP
+
+commit_list: list[str]
+
+with open(commit_map_path) as file:
+	commit_list = file.readlines()[1:]
+
+commit_map: dict[str, str] = {}
+
+for entry in commit_list:
+	split = entry.strip().split(" ")
+
+	first = split[0]
+	second = split[1]
+
+	commit_map[first] = second
+
+## CLEAN REPOSITORY
+
+subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True)
+
+for submodule_path in submodule_paths:
+	subprocess.run(["git", "submodule", "deinit", "-f", submodule_path], check=False)
+
+## EDITOR
+
+env = os.environ.copy()
+env["GIT_SEQUENCE_EDITOR"] = f"\"{os.path.dirname(__file__)}/edit_script.sh\""
+
+## BEGIN REBASE
+
+subprocess.run(
+	["git", "rebase", "-i", "--root"],
+	check=True,
+	env=env
+)
+
+## EDITOR
+
+env["GIT_EDITOR"] = "echo"
+
+## REBASE
+
 elapsed = 0
+code = 1
 
 while os.path.exists(".git/rebase-merge/"):
-	current_hash = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
-
+	### VARIABLES
 	elapsed += 1
 
-	subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True)
+	current_hash = subprocess.run(["git", "rev-parse", "REBASE_HEAD"], capture_output=True).stdout.strip().decode("utf-8")
+	"""Commit hash of the old commit before rebase"""
 
-	print(f"[{current_hash[0:7]}] ({elapsed})", end="")
+	print(f"[{current_hash[0:7]}] ({elapsed} -> {elapsed+1})", end="")
 
+	### CLEAN REPOSITORY
+
+	subprocess.run(["git", "restore", "--staged", "."], capture_output=True, check=True)
+	subprocess.run(["git", "clean", "-fxd", "-f"], capture_output=True, check=True)
+
+	### FINDING SUBMODULE PATH
+
+	path = None
 	for submodule_path in submodule_paths:
 		if os.path.exists(submodule_path):
-			subprocess.run(["git", "submodule", "update", "--init", submodule_path], capture_output=True, check=True)
-			subprocess.run(["git", "restore", "--staged", submodule_path], capture_output=True, check=True)
+			path = submodule_path
 
-			current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{submodule_path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
-			
+	if path is not None:
+		if code != 0:
+			### FINDING COMMIT HASH TO MAP TO
+			subprocess.run(["git", "submodule", "update", "--init", path], capture_output=True, check=True)
+
+			current_submodule_commit_hash = subprocess.run(["git", "rev-parse", f"{current_hash}:{path.removesuffix("/")}"], capture_output=True).stdout.strip().decode("utf-8")
+			"""The commit hash the submodule is currently at, before being remapped"""
+
 			if current_submodule_commit_hash in commit_map.keys():
 				submodule_mapped_commit = commit_map[current_submodule_commit_hash]
-
-				os.chdir(submodule_path)
-
-				print(f" [{Path(os.getcwd()).relative_to(repository_root)}: {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}]", end="")
-				subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True, check=True)
-				os.chdir(repository_root)
 			else:
 				print(f" [invalid commit hash]", end="")
 				submodule_mapped_commit = current_submodule_commit_hash
 
-			break
+			### MAPPING TO COMMIT
+			os.chdir(path)
+			subprocess.run(["git", "checkout", submodule_mapped_commit], capture_output=True, check=True)
+			print(f" [{Path(os.getcwd()).relative_to(repository_root)}: {current_submodule_commit_hash[0:7]} -> {submodule_mapped_commit[0:7]}]", end="")
+			os.chdir(repository_root)
+			subprocess.run(["git", "add", path], check=True)
+			print(f" +-{submodule_path}", end="")
 
-	subprocess.run(["git", "add", "."], check=True)
-	subprocess.run(["git", "rebase", "--continue"], env=env, capture_output=True)
-
-	rebase_in_progress = os.path.exists(".git/rebase-merge/")
+	exit_code = subprocess.run(["git", "rebase", "--continue"], env=env).returncode
+	if path is not None:
+		print(f" {"✅" if code == 0 else "❌"} -> {"✅" if exit_code == 0 else "❌"}", end="")
+		code = exit_code
 
 	edited_hash = subprocess.run(
-		[
-			"git",
-			"rev-parse",
-			f"HEAD~{1 if rebase_in_progress else 0}"
-		],
+		["git", "rev-parse", "HEAD~1"],
 		capture_output=True,
-		check=False
+		check=True
 	).stdout.strip().decode("utf-8")
 
 	if current_hash in old_commits_inverse.keys():
@@ -126,18 +157,17 @@ while os.path.exists(".git/rebase-merge/"):
 		print(f" (-> old {current_hash[0:7]})", end="")
 
 	print(f" -> {edited_hash[0:7]}", end="")
-
 	print()
 
 	if current_hash in commits.keys():
-		print(f"fatal: mapped the same commit ({current_hash[0:7]}) to multiple new commits ({commits[current_hash][0:7]}, {edited_hash[0:7]})")
-		exit(1)
+		print(f"fatal: mapped the same commit {elapsed} ({current_hash[0:7]}) to multiple new commits ({commits[current_hash][0:7]}, {edited_hash[0:7]})")
+		exit(5)
 
-	if edited_hash in commits.values():
+	if edited_hash in commits.values() and os.path.exists(".git/rebase-merge/") and code == 0:
 		inverted = {v: k for k, v in commits.items()}
 
-		print(f"fatal: mapped more than one commit ({inverted[edited_hash][0:7], current_hash[0:7]}) to same new commit {edited_hash[0:7]}")
-		exit(1)
+		print(f"fatal: mapped more than one commit ({inverted[edited_hash][0:7], current_hash[0:7]}) to same new commit {elapsed} {edited_hash[0:7]}")
+		exit(6)
 
 	commits[current_hash] = edited_hash
 
