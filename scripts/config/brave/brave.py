@@ -34,6 +34,9 @@ dictionary["brave"]["new_tab_page"]["background"]["type"] = "color"
 dictionary["brave"]["new_tab_page"]["background"]["selected_value"] = "#000000"
 
 dictionary["brave"]["rewards"]["show_brave_rewards_button_in_location_bar"] = False
+dictionary["brave"]["wallet"]["show_wallet_icon_on_toolbar"] = False
+
+dictionary["brave"]["today"]["opted_in"] = False
 
 serialized = json.dumps(
 	dictionary,
