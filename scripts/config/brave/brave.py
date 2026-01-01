@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
+import os
 import json
 
 path = "/home/dima/.config/BraveSoftware/Brave-Browser/Default/Preferences"
 backup = "/home/dima/.config/BraveSoftware/Brave-Browser/Default/Preferences.bak"
+
+if not os.path.exists(path):
+	exit(0)
 
 with open(path) as file:
 	configuration = file.read()
