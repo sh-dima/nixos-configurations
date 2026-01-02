@@ -112,6 +112,9 @@
       ".bash_history"
       ".bash_history-[0-9][0-9][0-9][0-9][0-9].tmp"
       ".python_history"
+      "id_ed25519"
+      "known_hosts"
+      "known_hosts.old"
     ];
   };
 }
