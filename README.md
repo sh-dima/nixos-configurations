@@ -19,7 +19,7 @@ Links
 Copyright
 ---------
 
-© 2025 [Дима Ш.][author]
+© 2025-2026 [Дима Ш.][author]
 
 [author]: https://shdima.gitlab.io/ (The author of this project)
 
