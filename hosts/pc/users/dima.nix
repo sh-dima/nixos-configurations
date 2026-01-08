@@ -8,6 +8,7 @@
     ../modules/personal/git.nix
 
     ../../../modules/generic/jadx
+    ../../../modules/generic/scp-sl
   ];
 
   programs = {

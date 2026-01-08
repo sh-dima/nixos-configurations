@@ -9,6 +9,7 @@
 
     ../../../modules/generic/jadx
     ../../../modules/generic/brave.nix
+    ../../../modules/generic/scp-sl
   ];
 
   programs = {
