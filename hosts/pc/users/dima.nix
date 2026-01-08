@@ -8,6 +8,7 @@
     ../modules/personal/git.nix
 
     ../../../modules/generic/jadx
+    ../../../modules/generic/brave.nix
     ../../../modules/generic/scp-sl
   ];
 
