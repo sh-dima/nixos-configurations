@@ -164,6 +164,7 @@
   fonts.fontconfig.enable = true;
 
   programs.kdeconnect.enable = true;
+  programs.steam.enable = true;
 
   services.flatpak.enable = true;
 
