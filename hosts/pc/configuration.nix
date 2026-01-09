@@ -180,6 +180,8 @@
   home-manager.backupFileExtension = pkgs.lib.readFile "${pkgs.runCommand "timestamp" {} "echo -n `date '+%Y%m%d%H%M%S'` > $out"}" + ".bak";
   home-manager.users.dima = (import ./users/dima.nix { inherit inputs pkgs config; });
 
+  environment.etc."/brave/policies/managed/GroupPolicy.json".source = ../../modules/generic/brave/policies.json;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
