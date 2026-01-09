@@ -81,3 +81,5 @@
 07ReflexSight_1_GunShotgun_1_Color::-%(|::0
 07ReflexSight_1_GunShotgun_1_Size::-%(|::0
 07ReflexSight_1_GunShotgun_1_Brightness::-%(|::0
+
+00UserSettings_463A_0000::-%(|::true
