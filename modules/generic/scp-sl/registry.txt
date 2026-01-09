@@ -83,6 +83,7 @@
 07ReflexSight_1_GunShotgun_1_Brightness::-%(|::0
 
 00UserSettings_463A_0000::-%(|::true
+00UserSettings_5E67_6000::-%(|::true
 
 00UserSettings_B226_3000::-%(|::true
 
