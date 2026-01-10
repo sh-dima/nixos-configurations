@@ -1,4 +1,11 @@
 {
+  "BraveAIChatEnabled": false,
+  "BraveNewsDisabled": true,
+  "BraveTalkDisabled": true,
+  "BraveP3AEnabled": false,
+  "BraveWebDiscoveryEnabled": false,
+  "BravePlaylistEnabled": false,
+  "BraveStatsPingEnabled": false,
   "BraveRewardsDisabled": true,
   "BraveWalletDisabled": true
 }
