@@ -137,7 +137,6 @@
     tinymist
     texlive.combined.scheme-full
 
-    librewolf
     protonvpn-gui
     proton-pass
     protonmail-export

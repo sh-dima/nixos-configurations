@@ -141,7 +141,6 @@
     nixd
     steam-run-free
 
-    librewolf
     brave
     libreoffice
     obsidian
