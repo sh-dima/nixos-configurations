@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "firefox-addons": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "dir": "pkgs/firefox-addons",
-        "lastModified": 1765080359,
-        "narHash": "sha256-BvAgmqgswcokD2eWoyO3uB1k1VTdpxDHGSx0RYRFjDg=",
-        "owner": "rycee",
-        "repo": "nur-expressions",
-        "rev": "35f8ab2ecd954b3a348aa0e253878211c48a0aa7",
-        "type": "gitlab"
-      },
-      "original": {
-        "dir": "pkgs/firefox-addons",
-        "owner": "rycee",
-        "repo": "nur-expressions",
-        "type": "gitlab"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -76,7 +56,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1764866045,
@@ -150,7 +130,7 @@
       "inputs": {
         "flake-utils": "flake-utils_2",
         "nix-rust-wrangler": "nix-rust-wrangler",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
@@ -192,7 +172,7 @@
     },
     "nix4vscode": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "systems": "systems_4"
       },
       "locked": {
@@ -211,22 +191,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1744536153,
-        "narHash": "sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg/N38=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "18dd725c29603f582cf1900e0d25f9f1063dbf11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1764522689,
         "narHash": "sha256-SqUuBFjhl/kpDiVaKLQBoD8TLD+/cTUzzgVFoaHrkqY=",
         "owner": "NixOS",
@@ -241,7 +205,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1764667669,
         "narHash": "sha256-7WUCZfmqLAssbDqwg9cUDAXrSoXN79eEEq17qhTNM/Y=",
@@ -257,7 +221,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1750506804,
         "narHash": "sha256-VLFNc4egNjovYVxDGyBYTrvVCgDYgENp5bVi9fPTDYc=",
@@ -273,7 +237,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1764983851,
         "narHash": "sha256-y7RPKl/jJ/KAP/VKLMghMgXTlvNIJMHKskl8/Uuar7o=",
@@ -289,7 +253,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1756542300,
         "narHash": "sha256-tlOn88coG5fzdyqz6R93SQL5Gpq+m/DsWpekNFhqPQk=",
@@ -305,7 +269,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_7": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1764950072,
         "narHash": "sha256-BmPWzogsG2GsXZtlT+MTcAWeDK5hkbGRZTeZNW42fwA=",
@@ -321,7 +285,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_8": {
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1764947035,
         "narHash": "sha256-EYHSjVM4Ox4lvCXUMiKKs2vETUSL5mx+J2FfutM7T9w=",
@@ -340,7 +304,7 @@
     "plasma-manager": {
       "inputs": {
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1763909441,
@@ -359,7 +323,7 @@
     "prismlauncher": {
       "inputs": {
         "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": "nixpkgs_7"
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 1765149128,
@@ -377,13 +341,12 @@
     },
     "root": {
       "inputs": {
-        "firefox-addons": "firefox-addons",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
         "nix-jetbrains-plugins": "nix-jetbrains-plugins",
         "nix4vscode": "nix4vscode",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_4",
         "plasma-manager": "plasma-manager",
         "prismlauncher": "prismlauncher",
         "secrets": "secrets",
@@ -453,7 +416,7 @@
     },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_7"
       },
       "locked": {
         "lastModified": 1765079830,
