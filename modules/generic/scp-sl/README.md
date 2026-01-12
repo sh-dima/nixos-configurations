@@ -1,7 +1,7 @@
 SCP:SL Registry Documentation
 =============================
 
-Last updated: 2026/1/10
+Last updated: 2026/1/12
 
 *An unnoficial piece of documentation for the registry.txt file used to configure SCP:SL.*
 
@@ -33,6 +33,17 @@ Keys/Values
 
 Here is a list of key-value pairs and their meanings:
 
+* `13UserSettings_5E67_0000`
+
+	Possible values: `string` (must be the name of a language folder in the `Translations` directory)
+
+	Configures which language the game should use.
+
+	Languages are defined in the `Translations` folder.
+
+	On Linux, this folder is located at `/home/user/.local/share/Steam/steamapps/common/SCP Secret Laboratory/Translations`.
+
+	Corresponds to **Settings / Interface / Interface Language**.
 * `00UserSettings_5E67_3000`
 
 	Possible values: boolean (`true` - fast or `false` - regular)
