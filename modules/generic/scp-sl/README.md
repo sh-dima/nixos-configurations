@@ -3,7 +3,7 @@ SCP:SL Registry Documentation
 
 Last updated: 2026/1/12
 
-*An unnoficial piece of documentation for the registry.txt file used to configure SCP:SL.*
+*An unofficial piece of documentation for the registry.txt file used to configure SCP:SL.*
 
 Editing
 -------
