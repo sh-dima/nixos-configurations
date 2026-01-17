@@ -1,7 +1,7 @@
 SCP:SL Registry Documentation
 =============================
 
-Last updated: 2026/1/12
+Last updated: 2026/1/17
 
 *An unofficial piece of documentation for the registry.txt file used to configure SCP:SL.*
 
@@ -84,3 +84,57 @@ The format for attachment preset data is:
 
 * `XY` is a two-digit number corresponding to the gun that the preset belongs to.
 * `N` is a number 0-3 corresponding to the preset that is currently selected. `N=0` means the preset is custom and not saved.
+
+### Server Settings
+
+The format for server settings is the following:
+
+`07SrvSp_ID_1_SETTING::-%(|::value`
+
+* `ID` is a numerical server ID. (This ID can be found in the `history.txt` file)
+* `SETTING` is a number representing the server-specific setting.
+
+#### Settings
+
+Here is a list of settings on some servers:
+
+##### Candy Cult
+
+The ID of this server is `93013`.
+
+* `07SrvSp_93013_1_12051`:
+
+	Possible values: ASCII code
+
+	Default value: `122` ("z")
+
+	The keybind for opening a candy bag.
+
+	Corresponds to **Settings / Server-specific / The key to Player open candy bag**.
+* `07SrvSp_93013_1_12052`:
+
+	Possible values: ASCII code
+
+	Default value: `101` ("e")
+
+	The keybind to interact (pick up candy bags and coins) as an SCP.
+
+	Corresponds to **Settings / Server-specific / The key to SCP pick up candy & coin**.
+* `07SrvSp_93013_1_12053`:
+
+	Possible values: ASCII code
+
+	Default value: `120` ("x")
+
+	The keybind for equipping a coin.
+
+	Corresponds to **Settings / Server-specific / The key to Player equip coin**.
+* `07SrvSp_93013_1_12054`:
+
+	Possible values: ASCII code
+
+	Default value: `104` ("h")
+
+	The keybind for equipping a random item as an SCP.
+
+	Corresponds to **Settings / Server-specific / The key to SCP equip random item**.
