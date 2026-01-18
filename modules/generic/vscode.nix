@@ -111,6 +111,7 @@
       "flake.lock" = "json";
       "LICENSE" = "plaintext";
       "LICENSE-*" = "plaintext";
+      "NOTICE" = "plaintext";
     };
 
     "workbench.editorAssociations" = {
