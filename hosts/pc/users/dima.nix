@@ -10,6 +10,8 @@
     ../../../modules/generic/jadx
     ../../../modules/generic/brave.nix
     ../../../modules/generic/scp-sl
+
+    ../../../modules/generic/idea
   ];
 
   programs = {

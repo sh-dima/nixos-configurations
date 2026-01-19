@@ -1,0 +1,11 @@
+<application>
+	<component name="ProjectManager">
+		<defaultProject>
+			<component name="TerminalProjectNonSharedOptionsProvider">
+				<envs>
+					<env key="GIT_EDITOR" value="idea-oss --wait" />
+				</envs>
+			</component>
+		</defaultProject>
+	</component>
+</application>
