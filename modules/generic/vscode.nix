@@ -44,6 +44,10 @@
     "terminal.integrated.fontFamily" = "'Fira Code'";
     "terminal.integrated.fontLigatures.enabled" = true;
 
+    "terminal.integrated.env.linux" = {
+      "GIT_EDITOR" = "codium --wait";
+    };
+
     "git.confirmSync" = false;
     "git.autofetch" = true;
 

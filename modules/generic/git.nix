@@ -3,10 +3,6 @@
     enable = true;
 
     settings = {
-      core = {
-        editor = "codium --wait";
-      };
-
       init = {
         defaultBranch = "main";
       };
