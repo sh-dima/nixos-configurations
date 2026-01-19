@@ -15,6 +15,8 @@
     ../../modules/generic/java.nix
 
     ../../modules/generic/idea.nix
+
+    ../../modules/generic/fonts.nix
   ];
 
   hardware.bluetooth.enable = true;

@@ -15,6 +15,8 @@
     ../../modules/generic/java.nix
 
     ../../modules/generic/idea.nix
+
+    ../../modules/generic/fonts.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
