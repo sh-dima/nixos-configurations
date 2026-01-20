@@ -2,6 +2,8 @@
 import os
 import subprocess
 
+from datetime import datetime
+
 staged = subprocess.run(["git", "diff", "--cached", "--name-only"], capture_output=True).stdout.decode("utf-8").splitlines()
 
 if len(staged) == 0:
@@ -18,9 +20,13 @@ except:
 		if not os.path.exists(file):
 			continue
 
-		changed_time = os.path.getctime(file) # Last time the file or file metadata was changed
-		if changed_time > latest:
-			latest = changed_time
+		changed_time = subprocess.run(["stat", file], capture_output=True).stdout.decode("utf-8").splitlines()[5].removeprefix("Modify: ")
+		fixed = changed_time[:26] + changed_time[29:]
+		date = datetime.strptime(fixed, "%Y-%m-%d %H:%M:%S.%f %z")
+		timestamp = date.timestamp()
+
+		if timestamp > latest:
+			latest = timestamp
 
 	if latest == 0:
 		raise ValueError("Invalid commit date!")
