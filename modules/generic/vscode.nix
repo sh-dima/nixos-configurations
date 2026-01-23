@@ -11,6 +11,8 @@
 
     "mhutchie.git-graph.1.30.0"
     "streetsidesoftware.code-spell-checker.4.2.6"
+    "streetsidesoftware.code-spell-checker-german.2.3.4"
+    "streetsidesoftware.code-spell-checker-russian.2.2.4"
     "yandeu.five-server.0.3.9"
 
     "jnoortheen.nix-ide.0.4.22"
@@ -99,6 +101,7 @@
     "editor.insertSpaces" = false;
     "editor.tabSize" = 2;
 
+    "cSpell.language" = "en,ru,de";
     "cSpell.diagnosticLevel" = "Hint";
 
     "markdown.updateLinksOnFileMove.enabled" = "prompt";
