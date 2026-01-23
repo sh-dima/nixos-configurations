@@ -20,7 +20,7 @@ except:
 		if not os.path.exists(file):
 			continue
 
-		changed_time = subprocess.run(["stat", file], capture_output=True).stdout.decode("utf-8").splitlines()[5].removeprefix("Modify: ")
+		changed_time = subprocess.run(["stat", file], capture_output=True).stdout.decode("utf-8").splitlines()[6].removeprefix("Change: ")
 		fixed = changed_time[:26] + changed_time[29:]
 		date = datetime.strptime(fixed, "%Y-%m-%d %H:%M:%S.%f %z")
 		timestamp = date.timestamp()
