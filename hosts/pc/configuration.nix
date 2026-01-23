@@ -125,6 +125,7 @@
     usbimager
     gnome-disk-utility
     vscodium
+    godot
     nixd
     zip
     unzip
