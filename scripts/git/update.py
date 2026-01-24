@@ -2,13 +2,25 @@
 import os
 import subprocess
 
+from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 from datetime import datetime
+
+import logging
 
 staged = subprocess.run(["git", "diff", "--cached", "--name-only"], capture_output=True).stdout.decode("utf-8").splitlines()
 
 if len(staged) == 0:
 	# Let Git handle the error message for this:
 	exit(subprocess.run(["git", "commit"]).returncode)
+
+parser = ArgumentParser(
+	formatter_class=lambda prog: ArgumentDefaultsHelpFormatter(prog, width=120, max_help_position=50)
+)
+
+parser.add_argument("-l", "--log-level", type=str, choices=[level for level in logging._nameToLevel.keys()], default="INFO", metavar="level", help="set logging level")
+parsed = parser.parse_args()
+
+logging.basicConfig(level=getattr(logging, parsed.log_level))
 
 latest = 0
 
@@ -24,6 +36,8 @@ except:
 		fixed = changed_time[:26] + changed_time[29:]
 		date = datetime.strptime(fixed, "%Y-%m-%d %H:%M:%S.%f %z")
 		timestamp = date.timestamp()
+
+		logging.debug(f"{file}: {date}")
 
 		if timestamp > latest:
 			latest = timestamp
