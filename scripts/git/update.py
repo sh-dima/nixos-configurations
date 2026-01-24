@@ -33,8 +33,8 @@ except:
 			continue
 
 		changed_time = subprocess.run(["stat", file], capture_output=True).stdout.decode("utf-8").splitlines()[6].removeprefix("Change: ")
-		fixed = changed_time[:26] + changed_time[29:]
-		date = datetime.strptime(fixed, "%Y-%m-%d %H:%M:%S.%f %z")
+		fixed = changed_time[:19] + changed_time[29:]
+		date = datetime.strptime(fixed, "%Y-%m-%d %H:%M:%S %z")
 		timestamp = date.timestamp()
 
 		logging.debug(f"{file}: {date}")
