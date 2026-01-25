@@ -30,7 +30,10 @@ if os.path.exists(".git/prepare/time"):
 else:
 	for file in staged:
 		if not os.path.exists(file):
-			continue
+			# If the deletion of a file is staged, it is impossible to know when that file was deleted.
+			# For that reason, it is impossible to know what date and time should be attributed to the commit.
+			# Therefore, the normal git commit functionality is used.
+			exit(subprocess.run(["git", "commit"]).returncode)
 
 		changed_time = subprocess.run(["stat", file], capture_output=True).stdout.decode("utf-8").splitlines()[6].removeprefix("Change: ")
 		fixed = changed_time[:19] + changed_time[29:]
