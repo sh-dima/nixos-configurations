@@ -24,10 +24,10 @@ logging.basicConfig(level=getattr(logging, parsed.log_level))
 
 latest = 0
 
-try:
+if os.path.exists(".git/prepare/time"):
 	with open(".git/prepare/time") as file:
 		latest = float(file.read())
-except:
+else:
 	for file in staged:
 		if not os.path.exists(file):
 			continue
@@ -42,8 +42,8 @@ except:
 		if timestamp > latest:
 			latest = timestamp
 
-	if latest == 0:
-		raise ValueError("Invalid commit date!")
+if latest == 0:
+	raise ValueError("Invalid commit date!")
 
 subprocess.run(["git", "commit", f"--date={latest}"])
 
