@@ -1,7 +1,7 @@
 SCP:SL Registry Documentation
 =============================
 
-Last updated: 2026/1/17
+Last updated: 2026/1/25
 
 *An unofficial piece of documentation for the registry.txt file used to configure SCP:SL.*
 
@@ -44,6 +44,13 @@ Here is a list of key-value pairs and their meanings:
 	On Linux, this folder is located at `/home/user/.local/share/Steam/steamapps/common/SCP Secret Laboratory/Translations`.
 
 	Corresponds to **Settings / Interface / Interface Language**.
+* `00UserSettings_FF39_0000`
+
+	Possible values: boolean (`true` - enabled or `false` - disabled)
+
+	Whether to show the reinforcements interface (incoming spawn waves and mini waves).
+
+	Corresponds to **Toggle reinforcement interface**.
 * `00UserSettings_5E67_3000`
 
 	Possible values: boolean (`true` - fast or `false` - regular)
