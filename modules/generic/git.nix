@@ -111,6 +111,7 @@
       "*.crdownload"
       ".Trash-*"
       "id_ed25519"
+      ".gnupg/private-keys-v1.d/*.key"
       "known_hosts"
       "known_hosts.old"
     ];
