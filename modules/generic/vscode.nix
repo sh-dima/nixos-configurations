@@ -122,6 +122,9 @@
       "**/lib/python*/site-packages/*-*.dist-info/METADATA" = "plaintext";
       "**/lib/python*/site-packages/*-*.dist-info/RECORD" = "plaintext";
       "**/lib/python*/site-packages/*-*.dist-info/WHEEL" = "plaintext";
+
+      "**/result/nix-support/propagated-build-inputs" = "plaintext";
+      "/nix/store/*-*/nix-support/propagated-build-inputs" = "plaintext";
     };
 
     "workbench.editorAssociations" = {
