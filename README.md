@@ -13,15 +13,15 @@ Dotfiles
 Links
 -----
 
-* [GitLab][gitlab]
-* [GitHub][github]
+* [GitLab][1]
+* [GitHub][2]
 
 Copyright
 ---------
 
-© 2025-2026 [Дима Ш.][author]
+© 2025–2026 [Дима Ш.][3]
 
-[author]: https://shdima.gitlab.io/ (The author of this project)
+[1]: https://gitlab.com/-/p/71803427 (This project on GitLab)
+[2]: https://github.com/sh-dima/nixos-configurations (This project on GitHub)
 
-[gitlab]: https://gitlab.com/-/p/71803427 (This project on GitLab)
-[github]: https://github.com/sh-dima/nixos-configurations (This project on GitHub)
+[3]: https://shdima.gitlab.io/ (The author of this project)
