@@ -156,6 +156,8 @@
       "**/.git/filter-repo/suboptimal-issues" = "plaintext";
       "**/.git/filter-repo/*" = "plaintext";
 
+      "**/.git/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]" = "plaintext";
+
       "**/JetBrains/IdeaIC*.*/idea64.vmoptions" = "plaintext";
       "**/JetBrains/IdeaIC*.*/user.web.token" = "plaintext";
 
