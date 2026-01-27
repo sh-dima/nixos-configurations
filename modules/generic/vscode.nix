@@ -125,6 +125,25 @@
 
       "**/result/nix-support/propagated-build-inputs" = "plaintext";
       "/nix/store/*-*/nix-support/propagated-build-inputs" = "plaintext";
+
+      "**/.git/description" = "plaintext";
+      "**/.git/HEAD" = "plaintext";
+      "**/.git/ORIG_HEAD" = "plaintext";
+      "**/.git/FETCH_HEAD" = "plaintext";
+      "**/.git/REBASE_HEAD" = "plaintext";
+      "**/.git/packed-refs" = "plaintext";
+      "**/.git/refs/heads/*" = "plaintext";
+      "**/.git/refs/tags/*" = "plaintext";
+      "**/.git/refs/remotes/*/*" = "plaintext";
+      "**/.git/refs/remotes/heads/*" = "plaintext";
+      "**/.git/refs/stash" = "plaintext";
+      "**/.git/logs/HEAD" = "plaintext";
+      "**/.git/logs/refs/heads/*" = "plaintext";
+      "**/.git/logs/refs/remotes/*/*" = "plaintext";
+      "**/.git/logs/refs/stash" = "plaintext";
+      "**/.git/info/exclude" = "plaintext";
+      "**/.git/prepare/current" = "plaintext";
+      "**/.git/prepare/previous" = "plaintext";
     };
 
     "workbench.editorAssociations" = {
