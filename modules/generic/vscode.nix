@@ -131,6 +131,7 @@
       "**/.git/ORIG_HEAD" = "plaintext";
       "**/.git/FETCH_HEAD" = "plaintext";
       "**/.git/REBASE_HEAD" = "plaintext";
+      "**/.git/AUTO_MERGE" = "plaintext";
       "**/.git/packed-refs" = "plaintext";
       "**/.git/refs/heads/*" = "plaintext";
       "**/.git/refs/tags/*" = "plaintext";
@@ -142,8 +143,22 @@
       "**/.git/logs/refs/remotes/*/*" = "plaintext";
       "**/.git/logs/refs/stash" = "plaintext";
       "**/.git/info/exclude" = "plaintext";
+      "**/.git/info/refs" = "plaintext";
       "**/.git/prepare/current" = "plaintext";
       "**/.git/prepare/previous" = "plaintext";
+
+      "**/.git/filter-repo/already_ran" = "plaintext";
+      "**/.git/filter-repo/changed-refs" = "plaintext";
+      "**/.git/filter-repo/commit-map" = "plaintext";
+      "**/.git/filter-repo/first-changed-commits" = "plaintext";
+      "**/.git/filter-repo/ref-map" = "plaintext";
+      "**/.git/filter-repo/suboptimal-issues" = "plaintext";
+      "**/.git/filter-repo/*" = "plaintext";
+
+      "**/JetBrains/IdeaIC*.*/idea64.vmoptions" = "plaintext";
+      "**/JetBrains/IdeaIC*.*/user.web.token" = "plaintext";
+
+      "*.icls" = "xml";
 
       "*.tiny" = "plaintext";
     };
