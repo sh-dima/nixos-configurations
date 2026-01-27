@@ -144,6 +144,7 @@
       "**/.git/logs/refs/stash" = "plaintext";
       "**/.git/info/exclude" = "plaintext";
       "**/.git/info/refs" = "plaintext";
+      "**/.git/fast_import_crash_[0-9][0-9][0-9][0-9][0-9][0-9]" = "plaintext";
       "**/.git/prepare/current" = "plaintext";
       "**/.git/prepare/previous" = "plaintext";
 
