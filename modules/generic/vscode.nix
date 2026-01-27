@@ -144,6 +144,8 @@
       "**/.git/info/exclude" = "plaintext";
       "**/.git/prepare/current" = "plaintext";
       "**/.git/prepare/previous" = "plaintext";
+
+      "*.tiny" = "plaintext";
     };
 
     "workbench.editorAssociations" = {
