@@ -1,0 +1,10 @@
+<application>
+	<component name="FileTypeManager" version="19">
+		<extensionMap>
+			<mapping pattern="NOTICE" type="PLAIN_TEXT" />
+			<mapping pattern="LICENSE" type="PLAIN_TEXT" />
+
+			<mapping pattern="flake.lock" type="JSON" />
+		</extensionMap>
+	</component>
+</application>

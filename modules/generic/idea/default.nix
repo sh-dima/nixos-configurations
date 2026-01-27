@@ -10,6 +10,7 @@
     data = ''
       mkdir -p /home/dima/.config/JetBrains/IdeaIC2025.1/options/
       cat ${./project.default.xml} > /home/dima/.config/JetBrains/IdeaIC2025.1/options/project.default.xml
+      cat ${./filetypes.xml} > /home/dima/.config/JetBrains/IdeaIC2025.1/options/filetypes.xml
     '';
   };
 }
