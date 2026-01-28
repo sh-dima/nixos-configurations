@@ -161,8 +161,6 @@
     obs-studio
     kdePackages.kdenlive
     element-desktop
-
-    fira-code
   ];
 
   fonts.fontconfig.enable = true;

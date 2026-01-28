@@ -158,8 +158,6 @@
 
     prismlauncher
     obs-studio
-
-    fira-code
   ];
 
   fonts.fontconfig.enable = true;
